@@ -18,7 +18,7 @@ No need to import dependencies since it uses vanilla JS.
 
 Check the project brief here:
 
-- [JS Play with Assembler](<[https://link](https://docs.google.com/document/d/1Lej0MwOvlJJiD8fPIU3zu4LVSbi5kwQbnZMLNHTdII4/edit?ts=605dda99)>)
+- [JS Play with Assembler](https://docs.google.com/document/d/1Lej0MwOvlJJiD8fPIU3zu4LVSbi5kwQbnZMLNHTdII4/edit?ts=605dda99)
 
 ## Team members <!-- omit in toc -->
 
