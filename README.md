@@ -10,6 +10,18 @@ Clone the repository on your local machine:
 $ git clone https://github.com/Ricard-Garcia/js-play.git
 ```
 
+## Best practices
+
+In order to unify all declarations follow this guideline
+
+```
+<!-- ID declaration (camelCase) -->
+<div id="myDivID"></div>
+<!-- Class declaration (kebab-case) -->
+<div class="my-div-class"></div>
+
+```
+
 ### Dependencies
 
 No need to import dependencies since it uses vanilla JS.
