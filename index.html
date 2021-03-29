@@ -72,8 +72,10 @@
 <!-- Javascript -->
 <script>
     let userPageTemplate = document.getElementById('userPage');
-    let userPageTemplateContent = userPageTemplate.content;
+    const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
+    // let userPageTemplateContent = userPageTemplate.content;
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+    console.log("Initial set-up")
 </script>
 <script src="changePage.js"></script>
 
