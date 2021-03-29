@@ -1,9 +1,9 @@
 // Array to be sorterd
 //_________________________inputs to grap values
 //_______________grap name
-document.querySelector('form.player input.names').addEventListener('click',user_name);
+document.querySelector('form#userNameForm input').addEventListener('click',user_name);
 //_______________grap time
-document.querySelector('div input.start').addEventListener('click',start);
+
 document.querySelector('div.gameStart input.play').addEventListener('click',finish);
 document.querySelector('div.gameStart input.result').addEventListener('click',result);
 //_______________grap time
@@ -16,10 +16,14 @@ var res=0;
 
 function user_name(){
     var player_name=document.querySelector('form.player input.player').value;
-    return player_name;
+    console.log(player_name);
+    go=Date.now(); 
+    console.log(go);
+    
+   
   }
 
-function start(){   go=Date.now();  }
+
 function finish(){   end=Date.now();    }
 
 function result(){
