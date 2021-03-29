@@ -12,6 +12,17 @@ let startTime;
 let endTime;
 let stopGame;
 
+// start button 
+
+// start game button
+
+// get ready page
+
+// stop button 
+
+// result page 
+
+
 startButton.addEventListener("click", () => {
   if (username.checkValidity()) {
     screen.classList.remove("main");
@@ -29,6 +40,7 @@ startButton.addEventListener("click", () => {
     startGame.addEventListener("click", clickStartGame);
   }
 });
+//
 
 function clickStartGame() {
   screen.classList.remove("start");
@@ -49,7 +61,6 @@ function clickStartGame() {
 function clickStop() {
   endTime = new Date();
   const score = endTime - startTime;
-  console.log(score);
   screen.classList.remove("now");
   screen.classList.add("result");
   screen.innerHTML = "";
@@ -59,20 +70,38 @@ function clickStop() {
   playAgain = startButton.cloneNode();
   playAgain.setAttribute("value", "Play Again");
   screen.appendChild(playAgain);
-  var userObj = new Object();
-  userObj.username = username.value;
-  userObj.score = score;
-  scoreArray.push(userObj);
-  const topFour = scoreArray.sort((a, b) => a.score - b.score).slice(0, 4);
+  //var userObj = new Object();
+  //userObj.username = username.value;
+  //userObj.score = score;
+
+
+  localStorage.setItem(username.value, score);
+
+  for(var i =0 ; i < localStorage.length ; i++) {
+    userName = localStorage.key(i);
+    userScore = localStorage.getItem(userName);
+    scoreArray.push({"username": userName, "score": userScore});
+  }
+console.log(scoreArray, "array");
+console.log(localStorage, "local")
+
+ var topFour = scoreArray.sort((a, b) => a.score - b.score).slice(0, 4);
+ console.log(topFour)
+    
+    
+  
   scores.innerHTML = "";
+
 
   topFour.forEach((ele) => {
     var player = document.createElement("h3");
     var records = document.createElement("p");
-    scores.append(player, records);
     player.textContent = ele.username;
     records.textContent = ele.score
-      
+    scores.append(player, records);
+   
+
+    
   });
   playAgain.addEventListener("click", clickPlayAgain);
 }
