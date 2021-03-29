@@ -44,6 +44,7 @@ function userToGame() {
 
             document.getElementById('getReady').style.display='none';
             showStop();
+
         }, 1000);
         // Add next left block
     
@@ -53,11 +54,16 @@ function userToGame() {
     // Test print
     console.log("Switched to game")
 }
+var go=0;
+var end=0;
 function showStop(){
+     go=Date.now(); 
     // Add next left block
     let stopPageTemplate = document.getElementById('stopPage');
     const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
     document.getElementById('leftBlock').appendChild(stopPageTemplateContent);
+    document.getElementById('stopGame').addEventListener('click',function finish(){   end=Date.now(); alert((end-go)/1000);   });
+    
 }
 
 

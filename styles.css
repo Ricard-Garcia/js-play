@@ -16,6 +16,7 @@
    border: 1px solid black;
 }
 
+
 body {
     display: flex;
     flex-direction: column;
