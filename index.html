@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <!-- Body element -->
-<body>
 
+<body>
+    <header></header>
+    <section id="mainSection">
+        <div id="leftBlock">
+
+        </div>
+        <div id="sideBar">
+            <h2 id="scoresTitle">User Scores</h2>
+            <div id="topOneUser">
+                <h3 id="topOneName">Jose</h3>
+                <h3 id="topOneScore">240</h3>
+            </div>
+            <div id="topTwoUser">
+                <h3 id="topTwoName">Jose</h3>
+                <h3 id="topTwoScore">240</h3>
+            </div>
+            <div id="topThreeUser">
+                <h3 id="topThreeName">Jose</h3>
+                <h3 id="topThreeScore">240</h3>
+            </div>
+            <div id="topFourUser">
+                <h3 id="topFourName">Jose</h3>
+                <h3 id="topFourScore">240</h3>
+            </div>
+            <div id="topFiveUser">
+                <h3 id="topFiveName">Jose</h3>
+                <h3 id="topFiveScore">240</h3>
+            </div>
+        </div>
+    </section>
+
+    <template id="userPage">
+        <h2>Chose your user name</h2>
+        <div id="mainPageForm">
+            <h3>User name</h3>
+            <form id="userNameForm">
+                <input type="text" required>
+            </form>
+            <button type="submit" name="userButton" form="userNameForm">Start</button>
+        </div>
+    </template>
+    <template id="gamePage">
+    </template>
+    <template id="resultPage">
+
+    </template>
+
+    <footer></footer>
 </body>
 <!-- Javascript -->
+<script>
+    let userPageTemplate = document.getElementById('userPage');
+    let userPageTemplateContent = userPageTemplate.content;
+    document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+</script>
 <script src="script.js"></script>
+
 </html>
