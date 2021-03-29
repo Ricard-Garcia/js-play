@@ -1,8 +1,8 @@
 /* General variables */
 :root{
     --font: 'Encode Sans Expanded', sans-serif;
-    --mainColor:
-    --accentColor: 
+    --mainColor: #D72150; /* Red */
+    --accentColor: #F7EECE; /* Whitish */
 }
 
 /* General styling */
@@ -23,7 +23,7 @@ body {
     flex-direction: column;
     height: 100vh;
     padding: 40px;
-}
+    background-image: linear-gradient(25deg, #300334, #6d0a49, #ad165f, #f22475)}
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Header */
@@ -43,7 +43,7 @@ header {
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Left block */
 #leftBlock {
-    background-color: rgb(255, 83, 83);
+    /* background-color: rgb(255, 83, 83); */
     grid-area: leftSection;
     padding: 30px;
     display: flex;
@@ -69,7 +69,7 @@ header {
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Sidebar */
 #sideBar {
-    background-color: rgb(78, 78, 114);
+    /* background-color: rgb(78, 78, 114); */
     grid-area: sideBar;
     padding: 30px 30px 80px 30px;
     /* padding-bottom: content: */
