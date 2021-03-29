@@ -1,8 +1,18 @@
-const screen = document.querySelector("#screen");
-const username = document.querySelector("#username");
-const mainH1 = document.querySelector("#screen h1");
-const startButton = document.querySelector("#screen .button");
-const scores = document.querySelector(".scores");
+const leftBlock = document.querySelector("#leftBlock");
+const inputName = document.getElementById("userNameForm").elements.item(0).value;
+const sideBar = document.querySelector("#sideBar");
+
+var logButton = document.getElementById("initialButton");
+logButton.addEventListener('click',getFormValue);
+
+var username; 
+
+
+function getFormValue() {
+  
+  console.log("test", inputName);
+}
+
 
 
 
@@ -16,30 +26,6 @@ let stopGame;
 // start button 
 
 
-startButton.addEventListener("click", () => {
-  if (username.checkValidity()) {
-
-
-    screen.classList.remove("main");
-    screen.classList.add("start");
-
-
-    var startGame = startButton.cloneNode();
-    screen.innerHTML = "";
-    startGame.setAttribute("value", "Start Game");
-    screen.appendChild(startGame);
-    var currentPlayer = document.createElement("h3");
-    var status = document.createElement("p");
-    scores.prepend(currentPlayer, status);
-
-
-    // currently playing
-    currentPlayer.textContent = `${username.value}`;
-    status.textContent = "currently playing";
-
-    startGame.addEventListener("click", clickStartGame);
-  }
-});
 
 
 // start game button
@@ -48,8 +34,16 @@ function clickStartGame() {
   screen.classList.remove("start");
   screen.classList.add("ready");
   
+
+
+
+
   // display it before stop button appears
   screen.textContent = "Get Ready...";
+
+
+
+
 
 
   // after 1 - 2 seconds, stop button appears
