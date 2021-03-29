@@ -14,6 +14,9 @@ function userToGame() {
         var stopButton = document.getElementById("stopGame");
         stopButton.addEventListener('click', gameToResults);
     });
+
+    console.log("Switched to game")
+
 }
 
 function gameToResults() {
@@ -25,6 +28,9 @@ function gameToResults() {
     document.getElementById('leftBlock').appendChild(resultPageTemplateContent);
     var againButton = document.getElementById("playAgain");
     againButton.onclick = resultsToUser;
+
+    console.log("Switched to results")
+
 }
 
 function resultsToUser() {
@@ -34,5 +40,8 @@ function resultsToUser() {
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
     // let userPageTemplateContent = userPageTemplate.content;
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+    console.log("Switched to user");
+    userToGame();
+
 
 }
