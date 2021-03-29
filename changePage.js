@@ -22,7 +22,6 @@ function userToGame() {
 
     // Test print
     console.log("Switched to game")
-
 }
 
 // Go to results page
@@ -40,7 +39,6 @@ function gameToResults() {
 
     // Test print
     console.log("Switched to results")
-
 }
 
 // Go to initial page
@@ -57,6 +55,4 @@ function resultsToUser() {
 
     //Reset user to game to default
     userToGame();
-
-
 }
