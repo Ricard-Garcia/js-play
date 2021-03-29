@@ -13,6 +13,16 @@
     box-sizing: border-box;
     font-family: var(--font);
     color: var(--accentColor);
+
+    /* Disable text selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome, Edge, Opera and Firefox */
+
     /* border: 1px solid black; */
 }
 
@@ -69,10 +79,19 @@ header {
     text-transform: uppercase;
 }
 
+/* Initial text area (user) */
+#initialTextArea{
+    background-color: transparent;
+    outline: none;
+    color:whitesmoke;
+}
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Sidebar */
 #sideBar {
-    background-color: rgba(255, 255, 255, 0.42);
+    /* background-color: rgba(255, 255, 255, 0.42); */
+    border: whitesmoke 3px solid;
+    background-color: transparent;
     border-radius: 20px;
     grid-area: sideBar;
     padding: 50px 50px 50px 50px;
@@ -87,7 +106,6 @@ header {
     height: fit-content;
     margin-bottom: 60px;
     text-transform: uppercase;
-
 }
 
 /* Top users */
@@ -100,6 +118,18 @@ header {
 
 .top-user{
     margin-bottom: 30px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Buttons */
+button{
+    border: whitesmoke 2px solid;
+    border-radius: 10px;
+    background-color: transparent;
+    box-sizing: content-box;
+    padding: 10px;
+    color: whitesmoke;
+
 }
 
 /* Footer */
