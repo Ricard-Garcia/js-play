@@ -1,5 +1,6 @@
 var logButton = document.getElementById("initialButton");
 logButton.addEventListener('click',userToGame);
+var player_name=''
 
 // Go to game page
 function userToGame() {
@@ -7,7 +8,7 @@ function userToGame() {
     var form = document.getElementById('userNameForm');
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        var player_name=document.querySelector('form#userNameForm input').value;
+        player_name=document.querySelector('form#userNameForm input').value;
         console.log(player_name);
         
         
@@ -55,9 +56,10 @@ function userToGame() {
     console.log("Switched to game")
 }
 // _________________In this global variables we set the times we need.
-var go=0;
-var end=0;
-var result=0;
+    var go=0;
+    var end=0;
+    var result=0;
+    console.log('old value of result',result);
 function showStop(){
      go=Date.now(); 
     // Add next left block
@@ -74,10 +76,15 @@ function showStop(){
     function finish(){   
         
         end=Date.now(); 
-        result=(end-go)/1000;   
+        result=(end-go)/1000;  
+        // _________________finally we set the values in a localstorage.
+        localStorage.setItem(player_name,result);
+        console.log(localStorage); 
     });
-    
-}
+   
+};
+
+
 
 
 // Go to results page
