@@ -2,7 +2,7 @@
 :root{
     --font: 'Encode Sans Expanded', sans-serif;
     --mainColor: #D72150; /* Red */
-    --accentColor: #F7EECE; /* Whitish */
+    --accentColor: whitesmoke; /* Whitish */
 }
 
 /* General styling */
@@ -75,7 +75,7 @@ header {
     background-color: rgba(255, 255, 255, 0.42);
     border-radius: 20px;
     grid-area: sideBar;
-    padding: 30px 30px 80px 30px;
+    padding: 50px 50px 50px 50px;
     /* padding-bottom: content: */
     display: flex;
     flex-direction: column;
@@ -109,3 +109,17 @@ footer {
 
 
 /* Font styling */
+h2{
+    font-size: 50px;
+    line-height: 50px;
+
+}
+
+h3{
+    font-size: 30px;
+}
+
+.user-score{
+    font-weight: 100;
+}
+
