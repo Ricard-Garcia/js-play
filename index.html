@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,85 @@
     <title>Test your reflexes</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;500;900&display=swap" rel="stylesheet">
 </head>
 <!-- Body element -->
-<body>
-    <div id="container">
-        <div id="screen" class="main">
-            <h1>Choose a user name</h1>
-           <input type="text" name="username" id="username" placeholder= "Enter your username" required>
-            <input type="button" value="Start" class="button">
-        </div>
-        <div id="ranking">
-            <h3>User Scores</h3>
-            <div class="scores">
 
+<body>
+    <header></header>
+    <section id="mainSection">
+        <div id="leftBlock">
+
+        </div>
+        <div id="sideBar">
+            <h2 id="scoresTitle">User Scores</h2>
+            <div id="topUserWrapper">
+                <div class="top-user" id="topOneUser">
+                    <h3 id="topOneName">Jose</h3>
+                    <h3 id="topOneScore">240</h3>
+                </div>
+                <div class="top-user" id="topTwoUser">
+                    <h3 id="topTwoName">Jose</h3>
+                    <h3 id="topTwoScore">240</h3>
+                </div>
+                <div class="top-user" id="topThreeUser">
+                    <h3 id="topThreeName">Jose</h3>
+                    <h3 id="topThreeScore">240</h3>
+                </div>
+                <div class="top-user" id="topFourUser">
+                    <h3 id="topFourName">Jose</h3>
+                    <h3 id="topFourScore">240</h3>
+                </div>
+                <div class="top-user" id="topFiveUser">
+                    <h3 id="topFiveName">Jose</h3>
+                    <h3 id="topFiveScore">240</h3>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <template id="userPage">
+        <div class="left-wrapper">
+            <h2 class="title-page">Chose your user name</h2>
+            <div id="mainPageForm">
+                <h3>User name</h3>
+                <form action="" id="userNameForm">
+                    <input type="text">
+                </form>
+                <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="gamePage">
+        <button id="startGame">Start Game</button>
+        <h3>Get ready...</h3>
+        <button id="stopGame">Stop Game</button>
+    </template>
+
+    <template id="resultPage">
+        <div class="left-wrapper">
+            <h2 class="title-page">Your score</h2>
+            <h3>Your reaction time was:</h3>
+            <h3 id="secondScore">1,4 seconds</h3>
+            <button id="playAgain">Play again</button>
+        </div>
+    </template>
+
+    <footer></footer>
 </body>
 <!-- Javascript -->
+
+<script>
+    let userPageTemplate = document.getElementById('userPage');
+    const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
+    // let userPageTemplateContent = userPageTemplate.content;
+    document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+    console.log("Initial set-up")
+</script>
+<script src="changePage.js"></script>
 <script src="userlogs.js"></script>
+
 </html>
