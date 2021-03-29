@@ -12,7 +12,7 @@
     border: 0;
     box-sizing: border-box;
     font-family: var(--font);
-    color: white;
+    color: var(--accentColor);
     /* border: 1px solid black; */
 }
 
@@ -23,7 +23,9 @@ body {
     flex-direction: column;
     height: 100vh;
     padding: 40px;
-    background-image: linear-gradient(25deg, #300334, #6d0a49, #ad165f, #f22475)}
+    /* background-color: var(--mainColor); */
+    background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b)
+}
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Header */
@@ -64,12 +66,14 @@ header {
 /* Title */
 .title-page{
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Sidebar */
 #sideBar {
-    /* background-color: rgb(78, 78, 114); */
+    background-color: rgba(255, 255, 255, 0.42);
+    border-radius: 20px;
     grid-area: sideBar;
     padding: 30px 30px 80px 30px;
     /* padding-bottom: content: */
@@ -82,6 +86,8 @@ header {
 #scoresTitle{
     height: fit-content;
     margin-bottom: 60px;
+    text-transform: uppercase;
+
 }
 
 /* Top users */
