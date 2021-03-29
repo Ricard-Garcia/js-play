@@ -36,8 +36,10 @@ Check the project brief here:
 
 ### Resources
 
-- [CSS Transform](https://css-tricks.com/almanac/properties/t/transform/)
-- [JS Math.random()](https://www.w3schools.com/jsref/jsref_random.asp)
+- [CSS | Transform](https://css-tricks.com/almanac/properties/t/transform/)
+- [JS | Math.random()](https://www.w3schools.com/jsref/jsref_random.asp)
+- [JS | Local storage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
+- [JS | Sorting arrays](https://www.w3schools.com/js/js_array_sort.asp)
 
 
 ## Team members <!-- omit in toc -->
