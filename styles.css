@@ -30,7 +30,7 @@
     user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
 
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -126,7 +126,8 @@ header {
     flex-grow: 1;
 }
 
-.topName{
+/* Top user wrapper */
+.top-user{
     margin-bottom: 30px;
 }
 
