@@ -65,6 +65,8 @@ function showStop() {
     }
     var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
 
+    console.log("This is the internaly array", scoreArray);
+    
     var topPlayers = document.querySelectorAll(".topName");
     var topScores = document.querySelectorAll(".topScore");
 
