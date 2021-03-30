@@ -73,12 +73,13 @@ function finish() {
   var topPlayers = document.querySelectorAll(".topName");
   var topScores = document.querySelectorAll(".topScore");
 
-  for (var i = 0; i < topFive.length; i++) {
-    topPlayers[i].textContent = topFive[i].username;
-    topScores[i].textContent = `${topFive[i].score} seconds`;
-  }
-  gameToResults();
+    for (var i = 0; i < topFive.length; i++) {
+      topPlayers[i].textContent = `#${i+1} ` + topFive[i].username;
+      topScores[i].textContent = `${topFive[i].score} seconds`;
+    }
+    gameToResults();
 }
+
 
 // Go to results page
 function gameToResults() {

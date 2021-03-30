@@ -9,15 +9,21 @@
     <title>Test your reflexes</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Stylesheets -->
+    <!-- Typefaces -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Encode Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;500;900&display=swap" rel="stylesheet">
+    <!-- Titillium -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;900&display=swap" rel="stylesheet">
 </head>
 <!-- Body element -->
 
 <body>
-    <header></header>
+    <header>
+        <div id="headerTitle">Test your reflexes | JS Play</div>
+    </header>
     <section id="mainSection">
+        <!-- Templates will be placed here -->
         <div id="leftBlock">
 
         </div>
@@ -25,24 +31,24 @@
             <h2 id="scoresTitle">User Scores</h2>
             <div id="topUserWrapper">
                 <div class="top-user" id="topOneUser">
-                    <h3 id="topOneName" class="topName">Jose</h3>
-                    <h3 id="topOneScore" class="topScore">240</h3>
+                    <h3 id="topOneName" class="topName"></h3>
+                    <h3 id="topOneScore" class="topScore"></h3>
                 </div>
                 <div class="top-user" id="topTwoUser">
-                    <h3 id="topTwoName" class="topName">Jose</h3>
-                    <h3 id="topTwoScore" class="topScore">240</h3>
+                    <h3 id="topTwoName" class="topName"></h3>
+                    <h3 id="topTwoScore" class="topScore"></h3>
                 </div>
                 <div class="top-user" id="topThreeUser">
-                    <h3 id="topThreeName" class="topName">Jose</h3>
-                    <h3 id="topThreeScore" class="topScore">240</h3>
+                    <h3 id="topThreeName" class="topName"></h3>
+                    <h3 id="topThreeScore" class="topScore"></h3>
                 </div>
                 <div class="top-user" id="topFourUser">
-                    <h3 id="topFourName" class="topName">Jose</h3>
-                    <h3 id="topFourScore" class="topScore">240</h3>
+                    <h3 id="topFourName" class="topName"></h3>
+                    <h3 id="topFourScore" class="topScore"></h3>
                 </div>
                 <div class="top-user" id="topFiveUser">
-                    <h3 id="topFiveName" class="topName">Jose</h3>
-                    <h3 id="topFiveScore" class="topScore">240</h3>
+                    <h3 id="topFiveName" class="topName"></h3>
+                    <h3 id="topFiveScore" class="topScore"></h3>
                 </div>
             </div>
         </div>
@@ -52,9 +58,9 @@
         <div class="left-wrapper">
             <h2 class="title-page">Chose your user name</h2>
             <div id="mainPageForm">
-                <h3>User name</h3>
+                <h3 class="subtitle-page">User name</h3>
                 <form action="" id="userNameForm">
-                    <input id="userInput" type="text">
+                    <input id="userInput" type="text" autofocus required>
                 </form>
                 <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
             </div>
@@ -65,7 +71,6 @@
         <button id="startGame">Start Game</button>
         <h3 id='getReady'>Get ready...</h3>
     </template>
-    
 
     <template id="stopPage">
         <div id="gridContainer">
@@ -76,7 +81,7 @@
     <template id="resultPage">
         <div class="left-wrapper">
             <h2 class="title-page">Your score</h2>
-            <h3>Your reaction time was:</h3>
+            <h3 class="subtitle-page">Your reaction time was:</h3>
             <h3 id="secondsScore"></h3>
             <button id="playAgain">Play again</button>
         </div>
@@ -90,6 +95,25 @@
     let userPageTemplate = document.getElementById('userPage');
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+
+    var scoreArray = [];
+
+    // sidebar top users and scores
+    for (var i = 0; i < localStorage.length; i++) {
+        userName = localStorage.key(i);
+        userScore = localStorage.getItem(userName);
+        scoreArray.push({ username: userName, score: userScore });
+    }
+    var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
+
+    var topPlayers = document.querySelectorAll(".topName");
+    var topScores = document.querySelectorAll(".topScore");
+
+    for (var i = 0; i < topFive.length; i++) {
+        topPlayers[i].textContent = `#${i+1} ` + topFive[i].username;
+        topScores[i].textContent = `${topFive[i].score} seconds`;
+    }
+
 </script>
 <script src="changePage.js"></script>
 
