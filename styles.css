@@ -1,8 +1,14 @@
 /* General variables */
 :root{
-    --font: 'Encode Sans Expanded', sans-serif;
     --mainColor: #D72150; /* Red */
     --accentColor: whitesmoke; /* Whitish */
+}
+
+/* Typeface declaration */
+@font-face {
+	font-family: 'Work Sans';
+    src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf') format("truetype-variations");
+    font-weight: 100 900;
 }
 
 /* General styling */
@@ -11,7 +17,8 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: var(--font);
+    font-family:'Encode Sans Expanded', sans-serif;
+    /* font-family: 'Titillium Web', sans-serif; */
     color: var(--accentColor);
 
     /* Disable text selection */
@@ -155,7 +162,17 @@ h3{
 }
 
 .subtitle-page{
-margin-bottom: 20px;
+    margin-bottom: 20px;
+    font-family: 'Work Sans';
+    font-variation-settings: 'wght' 100;
+    transition: .5s;
+
+}
+
+.subtitle-page:hover{
+    margin-bottom: 20px;
+    font-family: 'Work Sans';
+    font-variation-settings: 'wght' 900;
 
 }
 
