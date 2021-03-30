@@ -91,6 +91,25 @@
     let userPageTemplate = document.getElementById('userPage');
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+
+    var scoreArray = [];
+
+    // sidebar top users and scores
+    for (var i = 0; i < localStorage.length; i++) {
+        userName = localStorage.key(i);
+        userScore = localStorage.getItem(userName);
+        scoreArray.push({ username: userName, score: userScore });
+    }
+    var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
+
+    var topPlayers = document.querySelectorAll(".topName");
+    var topScores = document.querySelectorAll(".topScore");
+
+    for (var i = 0; i < topFive.length; i++) {
+        topPlayers[i].textContent = topFive[i].username;
+        topScores[i].textContent = `${topFive[i].score} seconds`;
+    }
+
 </script>
 <script src="changePage.js"></script>
 </html>
