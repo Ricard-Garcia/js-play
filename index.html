@@ -54,7 +54,7 @@
             <div id="mainPageForm">
                 <h3>User name</h3>
                 <form action="" id="userNameForm">
-                    <input type="text">
+                    <input id="userInput" type="text">
                 </form>
                 <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
             </div>
@@ -76,7 +76,7 @@
         <div class="left-wrapper">
             <h2 class="title-page">Your score</h2>
             <h3>Your reaction time was:</h3>
-            <h3 id="secondScore"></h3>
+            <h3 id="secondsScore"></h3>
             <button id="playAgain">Play again</button>
         </div>
     </template>
@@ -88,9 +88,7 @@
 <script>
     let userPageTemplate = document.getElementById('userPage');
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
-    // let userPageTemplateContent = userPageTemplate.content;
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
-    console.log("Initial set-up")
 </script>
 <script src="changePage.js"></script>
 </html>
