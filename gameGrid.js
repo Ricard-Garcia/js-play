@@ -9,21 +9,28 @@ function showGameGrid() {
   containerStyle.gridTemplateColumns = "repeat(4, 1fr)";
   containerStyle.gridTemplateRows = "repeat(4, 1fr)";
   containerStyle.textAlign = "center";
+
+
   const randomIndex = Math.floor(Math.random() * 15) + 1;
   console.log(items[randomIndex]);
 
-  var count = 1
+
+  
   var choose = setInterval(() => {
     
     const randomIndex = Math.floor(Math.random() * 15) + 1;
     console.log(items[randomIndex]);
     const randomGridBox = items[randomIndex];
     randomGridBox.style.background = "red";
+    randomGridBox.style.visibility = "visible";
+    randomGridBox.addEventListener("click", showNext)
+
+    setTimeout(() => {
+        randomGridBox.style.visibility = "hidden";
+    },1000)
 
     count--
-    if(count === 0 ) {
-        clearInterval(choose)
-    }
+    
 
   }, 1000);
 
@@ -34,6 +41,10 @@ function showGameGrid() {
     // console.log(element)
     //
   });
+}
+
+function showNext() {
+    container.innerHTML = "GOOD"
 }
 
 function init() {
