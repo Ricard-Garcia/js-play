@@ -30,7 +30,7 @@
     user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -138,8 +138,16 @@ button{
     border-radius: 10px;
     background-color: transparent;
     box-sizing: content-box;
-    padding: 10px;
+    padding: 10px 10px 14px 10px;
     color: whitesmoke;
+    transition: .4s;
+    outline: none;
+}
+
+button:hover{
+    border: transparent 2px solid;
+    background-color: whitesmoke;
+    color: #274e45;
 }
 
 /* Footer */
@@ -179,3 +187,7 @@ h3{
     font-weight: 100;
 }
 
+/* User result */
+#secondsScore{
+    margin-bottom: 30px;
+}
