@@ -30,13 +30,13 @@ function userToGame() {
     startButton.onclick = showGetReady;
       //_______________________________________animation,hidde slide and fullscreen game
 
-      document.getElementById("sideBar").style.transform = "translateX(500px)";
+      document.getElementById("sideBar").style.transform = "scaleX(0.5) translateX(500px)";
       document.getElementById("sideBar").style.opacity='0' 
-      document.getElementById("leftBlock").style.transform = " translateX(100px)";
-      document.getElementById("mainSection").style.gridTemplateColumns="3fr 0fr";
-      document.getElementById("leftBlock").style.backgroundColor="blue";
+      document.getElementById("leftBlock").style.transform = " translateX(33%)";
+     
+      //document.getElementById("leftBlock").style.backgroundColor="blue";
       
-      document.getElementById("mainSection").style.gridTemplateColumns="1fr";
+      document.getElementById("mainSection").style.gridTemplateColumns="4fr ";
         //document.getElementById("sideBar").style.display='none';
       
       
