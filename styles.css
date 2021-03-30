@@ -32,6 +32,9 @@ header {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: "leftSection sideBar";
+    transition: 3s;
+    /*animation:none;*/
+    
 }
 
 
@@ -44,6 +47,9 @@ header {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
+    
+    transition: 1s;
+
 }
 
 .left-wrapper{
@@ -67,6 +73,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: 0.5s;
+    
+    
+    
 }
 
 #scoresTitle{
@@ -85,11 +95,26 @@ header {
 
 .top-user{
     margin-bottom: 30px;
+    width: 100%;
+    transition:1s;
+    
 }
 
 footer {
     height: 50px;
 }
 
+#gamePage{
+    
+    transition: 1s;
+}
 
 /* Font styling */
+
+/* animations */
+/*@keyframes gridAnimation{
+   0% {grid-template-columns: 75% 25%;}
+  100% {grid-template-columns: 100% 0%;}
+
+}*/
+

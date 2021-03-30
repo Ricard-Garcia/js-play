@@ -18,22 +18,40 @@ function userToGame() {
     leftTemplate.innerHTML = "";
     // Add next left block
     let gamePageTemplate = document.getElementById("gamePage");
+
     const gamePageTemplateContent = document.importNode(gamePageTemplate.content, true);
     leftTemplate.appendChild(gamePageTemplateContent);
+
+
 
     document.getElementById("getReady").style.display = "none";
     //_______start
     var startButton = document.getElementById("startGame");
     startButton.onclick = showGetReady;
+      //_______________________________________animation,hidde slide and fullscreen game
+
+      document.getElementById("sideBar").style.transform = "translateX(500px)";
+      document.getElementById("sideBar").style.opacity='0' 
+      document.getElementById("leftBlock").style.transform = "scaleX(1.22) translateX(90px)";
+      document.getElementById("mainSection").style.gridTemplateColumns="1fr";
+      document.getElementById("leftBlock").style.backgroundColor="blue";
+      startButton.style.transform="scaleY(1.4)";
+    //________________________________________________________________________________
   });
   //_______stop
   function showGetReady() {
-    var randomNumber = Math.floor(Math.random() * 10000) + 1000;
+    document.getElementById("leftBlock").style.backgroundColor="blue";
+    var randomNumber = Math.floor(Math.random() * 1000) + 1000;
     var getReadyText = document.getElementById("getReady");
     getReadyText.style.display = "";
+    getReadyText.style.transform="scaleY(1.4)";
     document.getElementById("startGame").style.display = "none";
+    
+    
     setTimeout(function () {
       getReadyText.style.display = "none";
+      
+       
       showStop();
     }, randomNumber);
   };
@@ -41,14 +59,19 @@ function userToGame() {
 // _________________In this global variables we set the times we need.
 function showStop() {
   startTime = Date.now();
+    
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
   const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
   document.getElementById("leftBlock").appendChild(stopPageTemplateContent);
+  
   // _________________Giving funcionality to stop button.
-  document.getElementById("stopGame").addEventListener("click", finish);
+  stopButton=document.getElementById("stopGame");
+  stopButton.style.transform="scaleY(1.4)";
+  stopButton.addEventListener("click", finish);
   // _________________calculating the seconds.
   function finish() {
+    document.getElementById("sideBar").style.display='flex';
     stopTime = Date.now();
     result = (stopTime - startTime) / 1000;
     result = result.toFixed(2);
@@ -77,6 +100,14 @@ function showStop() {
 };
 // Go to results page
 function gameToResults() {
+  //___________________________________invert elements animation
+      document.getElementById("sideBar").style.transform = "";
+      document.getElementById("sideBar").style.opacity='100' 
+      document.getElementById("leftBlock").style.transform = "";
+      document.getElementById("mainSection").style.gridTemplateColumns="3fr 1fr";
+      document.getElementById("leftBlock").style.backgroundColor="red";
+
+  //____________________________________________________________
   // Remove previous left block
   let leftTemplate = document.getElementById("leftBlock");
   leftTemplate.innerHTML = "";
