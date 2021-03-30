@@ -77,7 +77,7 @@ header {
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Central */
 #mainSection {
-    flex-grow: 1;
+    flex: 1 1 auto;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: "leftSection sideBar";
@@ -178,7 +178,7 @@ button:hover{
 
 /* Footer */
 footer {
-    height: 50px;
+    height: 200px;
 }
 
 
