@@ -32,19 +32,27 @@ function userToGame() {
 
       document.getElementById("sideBar").style.transform = "translateX(500px)";
       document.getElementById("sideBar").style.opacity='0' 
-      document.getElementById("leftBlock").style.transform = "scaleX(1.22) translateX(90px)";
-      document.getElementById("mainSection").style.gridTemplateColumns="1fr";
+      document.getElementById("leftBlock").style.transform = " translateX(100px)";
+      document.getElementById("mainSection").style.gridTemplateColumns="3fr 0fr";
       document.getElementById("leftBlock").style.backgroundColor="blue";
-      startButton.style.transform="scaleY(1.4)";
+      
+      document.getElementById("mainSection").style.gridTemplateColumns="1fr";
+        //document.getElementById("sideBar").style.display='none';
+      
+      
+      
+      
     //________________________________________________________________________________
   });
+  
   //_______stop
   function showGetReady() {
-    document.getElementById("leftBlock").style.backgroundColor="blue";
+    
+    
     var randomNumber = Math.floor(Math.random() * 1000) + 1000;
     var getReadyText = document.getElementById("getReady");
     getReadyText.style.display = "";
-    getReadyText.style.transform="scaleY(1.4)";
+    
     document.getElementById("startGame").style.display = "none";
     
     
@@ -67,7 +75,7 @@ function showStop() {
   
   // _________________Giving funcionality to stop button.
   stopButton=document.getElementById("stopGame");
-  stopButton.style.transform="scaleY(1.4)";
+  
   stopButton.addEventListener("click", finish);
   // _________________calculating the seconds.
   function finish() {
