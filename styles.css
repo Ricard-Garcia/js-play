@@ -102,6 +102,7 @@ header {
     background-color: rgba(255, 255, 255, 0.2);
     /* border: whitesmoke 3px solid; */
     /* background-color: transparent; */
+    border-left: 2px white solid;
     border-radius: 20px;
     grid-area: sideBar;
     padding: 50px 50px 50px 50px;
