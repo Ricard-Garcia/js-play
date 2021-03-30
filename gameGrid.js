@@ -34,6 +34,7 @@ function showGameGrid() {
     element.style.height = "30px";
     element.style.padding = "10px";
     element.style.textAlign = "center";
+    element.style.transition = ".4s"
 
   });
 } showGameGrid();
