@@ -29,8 +29,22 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
-
     /* border: 1px solid black; */
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--dark-green);
+    -webkit-box-shadow: 0 0 0px 1000px var(--light-green) inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -48,6 +62,14 @@ body {
 /* Header */
 header {
     height: 100px;
+    display: flex;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 15px;
+    /* align-items: center; */
+    color: whitesmoke;
+    font-weight: 600;
+    padding-left: 30px;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
