@@ -6,6 +6,8 @@ var result = 0;
 var logButton = document.getElementById("initialButton");
 logButton.onclick = userToGame;
 
+
+
 // Go to game page
 function userToGame() {
   // Checking user form
@@ -41,12 +43,19 @@ function userToGame() {
 // _________________In this global variables we set the times we need.
 function showStop() {
   startTime = Date.now();
+  // Adding content via script
+  const gridGame = document.createElement('script');
+  gridGame.src = './gameGrid.js';
+  document.head.append(gridGame);
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
-  const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
+  const stopPageTemplateContent = document.importNode(stopPageTemplate.content);
   document.getElementById("leftBlock").appendChild(stopPageTemplateContent);
+  console.log(">>>>>>>>>>>>>", stopPageTemplateContent);
+
+
   // _________________Giving funcionality to stop button.
-  document.getElementById("stopGame").addEventListener("click", finish);
+  // document.getElementById("stopGame").addEventListener("click", finish);
   // _________________calculating the seconds.
   function finish() {
     stopTime = Date.now();
