@@ -69,7 +69,7 @@ function showStop() {
     var topScores = document.querySelectorAll(".topScore");
 
     for (var i = 0; i < topFive.length; i++) {
-      topPlayers[i].textContent = topFive[i].username;
+      topPlayers[i].textContent = `#${i+1} ` + topFive[i].username;
       topScores[i].textContent = `${topFive[i].score} seconds`;
     }
     gameToResults();

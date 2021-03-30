@@ -1,32 +1,57 @@
 /* General variables */
 :root{
-    --font: 'Encode Sans Expanded', sans-serif;
-    --mainColor:
-    --accentColor: 
+    --mainColor: #D72150; /* Red */
+    --accentColor: whitesmoke; /* Whitish */
 }
 
+/* Typeface declaration */
+@font-face {
+	font-family: 'Work Sans';
+    src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf') format("truetype-variations");
+    font-weight: 100 900;
+}
 
+/* General styling */
 * {
     padding: 0;
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: var(--font);
-    color: white;
-   border: 1px solid black;
+    font-family:'Encode Sans Expanded', sans-serif;
+    /* font-family: 'Titillium Web', sans-serif; */
+    color: var(--accentColor);
+
+    /* Disable text selection */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome, Edge, Opera and Firefox */
+
+    /* border: 1px solid black; */
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Body */
 body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     padding: 40px;
+    /* background-color: var(--mainColor); */
+    background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b)
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Header */
 header {
     height: 100px;
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Central */
 #mainSection {
     flex-grow: 1;
     display: grid;
@@ -34,10 +59,10 @@ header {
     grid-template-areas: "leftSection sideBar";
 }
 
-
-
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Left block */
 #leftBlock {
-    background-color: rgb(255, 83, 83);
+    /* background-color: rgb(255, 83, 83); */
     grid-area: leftSection;
     padding: 30px;
     display: flex;
@@ -55,41 +80,116 @@ header {
     height: 300px;
 }
 
+/* Title */
 .title-page{
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
+/* Initial text area (user) */
+#userInput{
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-color: transparent;
+    outline: none;
+    color:whitesmoke;
+    margin-bottom: 30px;
+    /* padding: 25px; */
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Sidebar */
 #sideBar {
-    background-color: rgb(78, 78, 114);
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border: whitesmoke 3px solid; */
+    /* background-color: transparent; */
+    /* border-left: 2px white solid; */
+    border-radius: 20px;
     grid-area: sideBar;
-    padding: 30px 30px 80px 30px;
+    padding: 50px 50px 50px 50px;
     /* padding-bottom: content: */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Title */
 #scoresTitle{
     height: fit-content;
     margin-bottom: 60px;
-
+    text-transform: uppercase;
 }
 
+/* Top users */
 #topUserWrapper{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     flex-grow: 1;
-    border: white 2px solid;
 }
 
+/* Top user wrapper */
 .top-user{
     margin-bottom: 30px;
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Buttons */
+button{
+    border: whitesmoke 2px solid;
+    border-radius: 10px;
+    background-color: transparent;
+    box-sizing: content-box;
+    padding: 10px 10px 14px 10px;
+    color: whitesmoke;
+    transition: .4s;
+    outline: none;
+    width: 80px;
+}
+
+button:hover{
+    border: transparent 2px solid;
+    background-color: whitesmoke;
+    color: #274e45;
+}
+
+/* Footer */
 footer {
     height: 50px;
 }
 
 
 /* Font styling */
+h2, input{
+    font-size: 50px;
+    line-height: 50px;
+}
+
+input{
+    font-weight: 100;
+}
+
+h3{
+    font-size: 30px;
+}
+
+.subtitle-page{
+    margin-bottom: 20px;
+    font-family: 'Work Sans';
+    font-variation-settings: 'wght' 100;
+    transition: .5s;
+}
+
+.subtitle-page:hover{
+    margin-bottom: 20px;
+    font-family: 'Work Sans';
+    font-variation-settings: 'wght' 900;
+}
+
+.topScore{
+    font-weight: 100;
+}
+
+/* User result */
+#secondsScore{
+    margin-bottom: 30px;
+}
