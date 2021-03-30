@@ -17,7 +17,9 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    font-family:'Encode Sans Expanded', sans-serif;
+    /* font-family:'Encode Sans Expanded', sans-serif; */
+    font-family:'Work Sans', sans-serif;
+    font-weight: 900;
     /* font-family: 'Titillium Web', sans-serif; */
     color: var(--accentColor);
 
@@ -29,8 +31,22 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
-
     /* border: 1px solid black; */
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: whitesmoke;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -48,12 +64,20 @@ body {
 /* Header */
 header {
     height: 100px;
+    display: flex;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 15px;
+    /* align-items: center; */
+    color: whitesmoke;
+    font-weight: 600;
+    padding-left: 30px;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Central */
 #mainSection {
-    flex-grow: 1;
+    flex: 1 1 auto;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: "leftSection sideBar";
@@ -139,7 +163,7 @@ button{
     border-radius: 10px;
     background-color: transparent;
     box-sizing: content-box;
-    padding: 10px 10px 14px 10px;
+    padding: 10px 10px 12px 10px;
     color: whitesmoke;
     transition: .4s;
     outline: none;
@@ -154,7 +178,7 @@ button:hover{
 
 /* Footer */
 footer {
-    height: 50px;
+    height: 200px;
 }
 
 
