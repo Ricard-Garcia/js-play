@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;500;900&display=swap" rel="stylesheet">
     <!-- Titillium -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;900&display=swap" rel="stylesheet">
-    
 </head>
 <!-- Body element -->
 
@@ -30,24 +29,24 @@
             <h2 id="scoresTitle">User Scores</h2>
             <div id="topUserWrapper">
                 <div class="top-user" id="topOneUser">
-                    <h3 class="user-name" id="topOneName">Jose</h3>
-                    <h3 class="user-score"id="topOneScore">240</h3>
+                    <h3 id="topOneName" class="topName">Jose</h3>
+                    <h3 id="topOneScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topTwoUser">
-                    <h3 class="user-name" id="topTwoName">Jose</h3>
-                    <h3 class="user-score"id="topTwoScore">240</h3>
+                    <h3 id="topTwoName" class="topName">Jose</h3>
+                    <h3 id="topTwoScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topThreeUser">
-                    <h3 class="user-name" id="topThreeName">Jose</h3>
-                    <h3 class="user-score"id="topThreeScore">240</h3>
+                    <h3 id="topThreeName" class="topName">Jose</h3>
+                    <h3 id="topThreeScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topFourUser">
-                    <h3 class="user-name" id="topFourName">Jose</h3>
-                    <h3 class="user-score"id="topFourScore">240</h3>
+                    <h3 id="topFourName" class="topName">Jose</h3>
+                    <h3 id="topFourScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topFiveUser">
-                    <h3 class="user-name" id="topFiveName">Jose</h3>
-                    <h3 class="user-score" id="topFiveScore">240</h3>
+                    <h3 id="topFiveName" class="topName">Jose</h3>
+                    <h3 id="topFiveScore" class="topScore">240</h3>
                 </div>
             </div>
         </div>
@@ -59,7 +58,7 @@
             <div id="mainPageForm">
                 <h3 class="subtitle-page">User name</h3>
                 <form action="" id="userNameForm">
-                    <input id="initialTextArea" type="text" autofocus>
+                    <input id="userInput" type="text">
                 </form>
                 <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
             </div>
@@ -68,7 +67,10 @@
 
     <template id="gamePage">
         <button id="startGame">Start Game</button>
-        <h3>Get ready...</h3>
+        <h3 id='getReady'>Get ready...</h3>
+    </template>
+
+    <template id="stopPage">
         <button id="stopGame">Stop Game</button>
     </template>
 
@@ -76,7 +78,7 @@
         <div class="left-wrapper">
             <h2 class="title-page">Your score</h2>
             <h3 class="subtitle-page">Your reaction time was:</h3>
-            <h3 id="secondScore">1,4 seconds</h3>
+            <h3 id="secondsScore"></h3>
             <button id="playAgain">Play again</button>
         </div>
     </template>
@@ -84,13 +86,11 @@
     <footer></footer>
 </body>
 <!-- Javascript -->
+
 <script>
     let userPageTemplate = document.getElementById('userPage');
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
-    // let userPageTemplateContent = userPageTemplate.content;
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
-    console.log("Initial set-up")
 </script>
 <script src="changePage.js"></script>
-
 </html>
