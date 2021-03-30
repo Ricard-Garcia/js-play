@@ -1,6 +1,6 @@
 # JS-Play
 
-Test your reflexes game developed at Assembler School of Software Engineering
+Test your reflexes game developed at Assembler School of Software Engineerin
 
 ## The repo
 
