@@ -72,11 +72,12 @@ function showStop() {
 
     function finish() {
       end = Date.now();
-      result = ((end - go)/1000)
+      result = (end - go) / 1000;
+      result = result.toFixed(2);
+      console.log(result);
       // _________________finally we set the values in a localStorage.
       localStorage.setItem(player_name, result);
       console.log(localStorage);
-
 
       // sidebar top users and scores
       for (var i = 0; i < localStorage.length; i++) {
@@ -93,19 +94,16 @@ function showStop() {
         topPlayers[i].textContent = topFive[i].username;
         topScores[i].textContent = `${topFive[i].score} seconds`;
       }
-      gameToResults()
+      gameToResults();
     }
   );
 }
 
 // Go to results page
 function gameToResults() {
-    
-    
   // Remove previous left block
   let leftTemplate = document.getElementById("leftBlock");
   leftTemplate.innerHTML = "";
-  
 
   // Add next left block
   let resultPageTemplate = document.getElementById("resultPage");
@@ -117,17 +115,16 @@ function gameToResults() {
   var againButton = document.getElementById("playAgain");
   againButton.onclick = resultsToUser;
 
-
-  var secondScore = document.querySelector("#secondScore")
- var currentScore = Object.values(localStorage).pop();
-secondScore.textContent = `${currentScore} seconds`
+  var secondScore = document.querySelector("#secondScore");
+  //var currentScore = Object.values(localStorage).pop();
+  secondScore.innerHTML = `${result} seconds`;
   // Test print
   console.log("Switched to results");
 }
 
 // Go to initial page
 function resultsToUser() {
-    console.log(player_name, result, "result")
+  console.log(player_name, result, "result");
   // Remove previous left block
   let leftTemplate = document.getElementById("leftBlock");
   leftTemplate.innerHTML = "";
