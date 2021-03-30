@@ -61,12 +61,13 @@ function showStop() {
     for (var i = 0; i < localStorage.length; i++) {
       userName = localStorage.key(i);
       userScore = localStorage.getItem(userName);
+      console.log("Pushed new user", userName, userScore);
       scoreArray.push({ username: userName, score: userScore });
     }
     var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
 
     console.log("This is the internaly array", scoreArray);
-    
+
     var topPlayers = document.querySelectorAll(".topName");
     var topScores = document.querySelectorAll(".topScore");
 
@@ -103,6 +104,9 @@ function resultsToUser() {
   let userPageTemplate = document.getElementById("userPage");
   const userPageTemplateContent = document.importNode(userPageTemplate.content,true);
   leftTemplate.appendChild(userPageTemplateContent);
+
+  // Reset the internal array
+  scoreArray = [];
   //Reset user to game to default
   userToGame();
 };
