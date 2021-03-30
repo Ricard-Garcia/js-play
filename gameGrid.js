@@ -1,58 +1,39 @@
-console.log(">>>>>>>>>>>> gameGrid");
-var container = document.getElementById("stopPage");
-// Adding all items inside container
-var contentContainer = document.createElement("div");
-container.appendChild(contentContainer);
-console.log(contentContainer, container);
+var container = document.getElementById("gridContainer");
+var containerStyle = container.style;
+containerStyle.gridTemplateColumns = "repeat(4, 1fr)";
 
-console.log(">>>>>>>>>>>> after adding");
+function showGameGrid() {
+  // Adding all items inside container
+  for (let i = 0; i < 60; i++) {
+    var contentContainer = document.createElement("div");
+    container.appendChild(contentContainer);
+    contentContainer.setAttribute('id', 'cell' + i);
+    contentContainer.innerHTML = "Stop me!";
+  }
+  
+  const myArray = [];
+  for (let i = 0; i < 60; i++) {
+    const items = document.getElementById("cell" + i);
+    myArray.push(items);
+  }
 
+  setInterval(() => {
+    const randomIndex = Math.floor(Math.random() * 60) + 1;
+    const randomGridBox = myArray[randomIndex];
+    randomGridBox.style.background = "red";
+    randomGridBox.addEventListener("click", finish);
 
-// const items = document.querySelectorAll(".item");
-// console.log(items);
-// function showGameGrid() {
-//   var containerStyle = container.style;
-//   containerStyle.display = "grid";
-//   containerStyle.background = "lightBlue";
-//   containerStyle.border = "2px solid";
-//   containerStyle.gridTemplateColumns = "repeat(4, 1fr)";
-//   containerStyle.gridTemplateRows = "repeat(4, 1fr)";
-//   containerStyle.textAlign = "center";
+    setTimeout(() => {
+      randomGridBox.style.background = "none";
+      randomGridBox.removeEventListener("click", finish);
+    }, 1000);
 
+  }, 1000);
 
-//   const randomIndex = Math.floor(Math.random() * 15) + 1;
-//   console.log(items[randomIndex]);
+  myArray.forEach((element) => {
+    element.style.height = "30px";
+    element.style.padding = "10px";
+    element.style.textAlign = "center";
 
-//   var choose = setInterval(() => {
-//     const randomIndex = Math.floor(Math.random() * 15) + 1;
-//     console.log(items[randomIndex]);
-//     const randomGridBox = items[randomIndex];
-//     randomGridBox.style.background = "red";
-//     randomGridBox.style.visibility = "visible";
-//     randomGridBox.addEventListener("click", showNext)
-
-//     setTimeout(() => {
-//         randomGridBox.style.visibility = "hidden";
-//     },1000)
-
-//     count--
-//   }, 1000);
-
-//   items.forEach((element) => {
-//     element.style.border = "2px solid";
-//     element.style.height = "30px";
-//     element.style.padding = "10px";
-//     // console.log(element)
-//     //
-//   });
-// }
-
-// function showNext() {
-//     container.innerHTML = "GOOD"
-// }
-
-// function init() {
-//   showGameGrid();
-// }
-
-// init();
+  });
+} showGameGrid();

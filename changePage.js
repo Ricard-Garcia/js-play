@@ -5,9 +5,6 @@ var stopTime = 0;
 var result = 0;
 var logButton = document.getElementById("initialButton");
 logButton.onclick = userToGame;
-
-
-
 // Go to game page
 function userToGame() {
   // Checking user form
@@ -30,7 +27,7 @@ function userToGame() {
   });
   //_______stop
   function showGetReady() {
-    var randomNumber = Math.floor(Math.random() * 10000) + 1000;
+    var randomNumber = Math.floor(Math.random() * 1000) + 2000;
     var getReadyText = document.getElementById("getReady");
     getReadyText.style.display = "";
     document.getElementById("startGame").style.display = "none";
@@ -49,41 +46,40 @@ function showStop() {
   document.head.append(gridGame);
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
-  const stopPageTemplateContent = document.importNode(stopPageTemplate.content);
+  const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
   document.getElementById("leftBlock").appendChild(stopPageTemplateContent);
-  console.log(">>>>>>>>>>>>>", stopPageTemplateContent);
-
-
   // _________________Giving funcionality to stop button.
   // document.getElementById("stopGame").addEventListener("click", finish);
   // _________________calculating the seconds.
-  function finish() {
-    stopTime = Date.now();
-    result = (stopTime - startTime) / 1000;
-    result = result.toFixed(2);
-    console.log(result);
-    // _________________finally we set the values in a localStorage.
-    localStorage.setItem(player_name, result);
-    console.log(localStorage);
-
-    // sidebar top users and scores
-    for (var i = 0; i < localStorage.length; i++) {
-      userName = localStorage.key(i);
-      userScore = localStorage.getItem(userName);
-      scoreArray.push({ username: userName, score: userScore });
-    }
-    var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
-
-    var topPlayers = document.querySelectorAll(".topName");
-    var topScores = document.querySelectorAll(".topScore");
-
-    for (var i = 0; i < topFive.length; i++) {
-      topPlayers[i].textContent = topFive[i].username;
-      topScores[i].textContent = `${topFive[i].score} seconds`;
-    }
-    gameToResults();
-  }
 };
+
+function finish() {
+  stopTime = Date.now();
+  result = (stopTime - startTime) / 1000;
+  result = result.toFixed(2);
+  console.log(result);
+  // _________________finally we set the values in a localStorage.
+  localStorage.setItem(player_name, result);
+  console.log(localStorage);
+
+  // sidebar top users and scores
+  for (var i = 0; i < localStorage.length; i++) {
+    userName = localStorage.key(i);
+    userScore = localStorage.getItem(userName);
+    scoreArray.push({ username: userName, score: userScore });
+  }
+  var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
+
+  var topPlayers = document.querySelectorAll(".topName");
+  var topScores = document.querySelectorAll(".topScore");
+
+  for (var i = 0; i < topFive.length; i++) {
+    topPlayers[i].textContent = topFive[i].username;
+    topScores[i].textContent = `${topFive[i].score} seconds`;
+  }
+  gameToResults();
+}
+
 // Go to results page
 function gameToResults() {
   // Remove previous left block
@@ -91,7 +87,7 @@ function gameToResults() {
   leftTemplate.innerHTML = "";
   // Add next left block
   let resultPageTemplate = document.getElementById("resultPage");
-  const resultPageTemplateContent = document.importNode(resultPageTemplate.content,true);
+  const resultPageTemplateContent = document.importNode(resultPageTemplate.content, true);
   leftTemplate.appendChild(resultPageTemplateContent);
 
   var secondsScore = document.getElementById("secondsScore");
@@ -108,7 +104,7 @@ function resultsToUser() {
   let leftTemplate = document.getElementById("leftBlock");
   leftTemplate.innerHTML = "";
   let userPageTemplate = document.getElementById("userPage");
-  const userPageTemplateContent = document.importNode(userPageTemplate.content,true);
+  const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
   leftTemplate.appendChild(userPageTemplateContent);
   //Reset user to game to default
   userToGame();
