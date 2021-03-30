@@ -126,7 +126,7 @@ header {
     flex-grow: 1;
 }
 
-.top-user{
+.topName{
     margin-bottom: 30px;
 }
 
@@ -174,7 +174,7 @@ h3{
     font-variation-settings: 'wght' 900;
 }
 
-.user-score{
+.topScore{
     font-weight: 100;
 }
 
