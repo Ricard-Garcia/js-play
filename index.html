@@ -25,24 +25,24 @@
             <h2 id="scoresTitle">User Scores</h2>
             <div id="topUserWrapper">
                 <div class="top-user" id="topOneUser">
-                    <h3 id="topOneName">Jose</h3>
-                    <h3 id="topOneScore">240</h3>
+                    <h3 id="topOneName" class="topName">Jose</h3>
+                    <h3 id="topOneScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topTwoUser">
-                    <h3 id="topTwoName">Jose</h3>
-                    <h3 id="topTwoScore">240</h3>
+                    <h3 id="topTwoName" class="topName">Jose</h3>
+                    <h3 id="topTwoScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topThreeUser">
-                    <h3 id="topThreeName">Jose</h3>
-                    <h3 id="topThreeScore">240</h3>
+                    <h3 id="topThreeName" class="topName">Jose</h3>
+                    <h3 id="topThreeScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topFourUser">
-                    <h3 id="topFourName">Jose</h3>
-                    <h3 id="topFourScore">240</h3>
+                    <h3 id="topFourName" class="topName">Jose</h3>
+                    <h3 id="topFourScore" class="topScore">240</h3>
                 </div>
                 <div class="top-user" id="topFiveUser">
-                    <h3 id="topFiveName">Jose</h3>
-                    <h3 id="topFiveScore">240</h3>
+                    <h3 id="topFiveName" class="topName">Jose</h3>
+                    <h3 id="topFiveScore" class="topScore">240</h3>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div id="mainPageForm">
                 <h3>User name</h3>
                 <form action="" id="userNameForm">
-                    <input type="text">
+                    <input id="userInput" type="text">
                 </form>
                 <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
             </div>
@@ -76,7 +76,7 @@
         <div class="left-wrapper">
             <h2 class="title-page">Your score</h2>
             <h3>Your reaction time was:</h3>
-            <h3 id="secondScore">1,4 seconds</h3>
+            <h3 id="secondsScore"></h3>
             <button id="playAgain">Play again</button>
         </div>
     </template>
@@ -84,13 +84,11 @@
     <footer></footer>
 </body>
 <!-- Javascript -->
+
 <script>
     let userPageTemplate = document.getElementById('userPage');
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
-    // let userPageTemplateContent = userPageTemplate.content;
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
-    console.log("Initial set-up")
 </script>
 <script src="changePage.js"></script>
-
 </html>
