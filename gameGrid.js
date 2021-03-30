@@ -21,10 +21,13 @@ function showGameGrid() {
     const randomIndex = Math.floor(Math.random() * 60) + 1;
     const randomGridBox = myArray[randomIndex];
     randomGridBox.style.fontWeight = "900";
+    randomGridBox.style.color = "white";
+
     randomGridBox.addEventListener("click", finish);
 
     setTimeout(() => {
       randomGridBox.style.fontWeight = "100";
+      randomGridBox.style.color = "transparent";
       randomGridBox.removeEventListener("click", finish);
     }, 500);
 
@@ -35,8 +38,12 @@ function showGameGrid() {
     element.style.padding = "10px";
     element.style.textAlign = "center";
     element.style.transition = ".4s";
-    element.style.fontSize = "50px",
+    element.style.fontSize = "45px",
     element.style.fontWeight = "100";
+    element.style.color = "transparent";
+    element.style.textTransform = "uppercase";
+
+
 
   });
 } showGameGrid();
