@@ -39,8 +39,38 @@ function userToGame() {
   };
 };
 // _________________In this global variables we set the times we need.
+var timerInterval;
+function timeToString(time) {
+  let diffHours = time / 3600000;
+  let hours = Math.floor(diffHours);
+
+  let diffMinutes = (diffHours -hours) * 60;
+  let minutes = Math.floor(diffMinutes);
+
+  let diffSeconds = (diffMinutes - minutes) * 60;
+  let seconds = Math.floor(diffSeconds);
+
+  let diffMSeconds = (diffSeconds - seconds) * 100;
+  let milliSeconds = Math.floor(diffMSeconds);
+
+  let secondsFormat = seconds.toString().padStart(2, "0");
+  let msFormat = milliSeconds.toString().padStart(2, "0");
+
+  return `${secondsFormat}.${msFormat}`
+}
 function showStop() {
+  
   startTime = Date.now();
+  
+  //================= stop watch ================//
+  var timerNumber = 0;
+  timerStart = Date.now() - timerNumber;
+  timerInterval = setInterval(function displayTime() {
+    timerNumber = Date.now() - timerStart;
+    document.getElementById("watch").innerHTML = timeToString(timerNumber);
+  }, 10);
+
+
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
   const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
@@ -53,6 +83,9 @@ function showStop() {
     result = (stopTime - startTime) / 1000;
     result = result.toFixed(2);
     console.log(result);
+
+    clearInterval(timerInterval);
+
     // _________________finally we set the values in a localStorage.
     localStorage.setItem(player_name, result);
     console.log(localStorage);
