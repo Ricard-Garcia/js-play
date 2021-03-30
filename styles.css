@@ -104,6 +104,13 @@ header {
     height: 300px;
 }
 
+#gridContainer {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 /* Title */
 .title-page{
     margin-bottom: 30px;
