@@ -57,8 +57,9 @@ body {
     height: 100vh;
     padding: 40px;
     /* background-color: var(--mainColor); */
-    background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b)
-}
+    background: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b);
+    transition: all 2s;
+}  
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Header */
@@ -140,7 +141,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: 1s;
+    transition: 0.5s;
     transition-timing-function: cubic-bezier(.30,.35,.48,1.68);
     
     
@@ -218,6 +219,7 @@ h3{
     font-family: 'Work Sans';
     font-variation-settings: 'wght' 100;
     transition: .5s;
+    
 }
 
 .subtitle-page:hover{
