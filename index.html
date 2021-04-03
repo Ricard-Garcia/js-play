@@ -93,6 +93,15 @@
     let userPageTemplate = document.getElementById('userPage');
     const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+    //document.querySelector('.title-page').style.color='red';
+    
+   
+    //__________________________________Welcome animations
+    document.getElementById("sideBar").style.animationName='slideAnimationY';
+    document.getElementById("sideBar").style.animationDuration='2s';
+     document.querySelector('.title-page').style.animationName='start';
+    document.querySelector('div#mainPageForm').style.animationName='inputName';
+    //_____________________________________________________
 
     var scoreArray = [];
 
