@@ -106,6 +106,7 @@ function showStop() {
     console.log(result);
     // _________________finally we set the values in a localStorage.
     localStorage.setItem(player_name, result);
+    
     console.log(localStorage);
 
     // sidebar top users and scores
