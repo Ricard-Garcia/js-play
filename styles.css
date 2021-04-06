@@ -221,3 +221,13 @@ h3{
 #secondsScore{
     margin-bottom: 30px;
 }
+
+#gridContainer div {
+    height: fit-content; 
+    text-align: center; 
+    transition: all 0.4s ease 0s; 
+    font-size: 45px; 
+    font-weight: 100; 
+    color: transparent; 
+    text-transform: uppercase;
+}

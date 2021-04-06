@@ -3,11 +3,13 @@ var scoreArray = [];
 var startTime = 0;
 var stopTime = 0;
 var result = 0;
+var count = 0;
 var logButton = document.getElementById("initialButton");
 logButton.onclick = userToGame;
 // Go to game page
 function userToGame() {
   // Checking user form
+  scoreArray = [];
   var form = document.getElementById("userNameForm");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -37,24 +39,56 @@ function userToGame() {
     }, randomNumber);
   };
 };
-// _________________In this global variables we set the times we need.
+
 function showStop() {
   startTime = Date.now();
-  // Adding content via script
-  const gridGame = document.createElement('script');
-  gridGame.src = './gameGrid.js';
-  document.head.append(gridGame);
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
   const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
   document.getElementById("leftBlock").appendChild(stopPageTemplateContent);
-  // _________________Giving funcionality to stop button.
-  // document.getElementById("stopGame").addEventListener("click", finish);
-  // _________________calculating the seconds.
+
+  var container = document.getElementById("gridContainer");
+  var containerStyle = container.style;
+
+  function showGameGrid(gridSize, timeSpeed, repeatGrid) {
+    containerStyle.gridTemplateColumns = repeatGrid;
+    // Adding all items inside container
+    for (let i = 0; i < gridSize; i++) {
+      var contentContainer = document.createElement("div");
+      container.appendChild(contentContainer);
+      contentContainer.setAttribute('id', 'cell' + i);
+      contentContainer.innerHTML = "Stop me!";
+    }
+
+    var myArray = [];
+    for (let i = 0; i < gridSize; i++) {
+      const items = document.getElementById("cell" + i);
+      myArray.push(items);
+    }
+
+    setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * gridSize) + 1;
+      const randomGridBox = myArray[randomIndex];
+      if (count == 0) {
+        count++;
+        randomGridBox.style.fontWeight = "900";
+        randomGridBox.style.color = "white";
+
+        randomGridBox.addEventListener("click", finish);
+        setTimeout(() => {
+          randomGridBox.style.fontWeight = "100";
+          randomGridBox.style.color = "transparent";
+          randomGridBox.removeEventListener("click", finish);
+        }, timeSpeed);
+
+      }
+    }, timeSpeed);
+  } showGameGrid(60, 1000, "repeat(5, 1fr)");
 };
 
 function finish() {
   stopTime = Date.now();
+  myArray = [];
   result = (stopTime - startTime) / 1000;
   result = result.toFixed(2);
   console.log(result);
@@ -73,13 +107,12 @@ function finish() {
   var topPlayers = document.querySelectorAll(".topName");
   var topScores = document.querySelectorAll(".topScore");
 
-    for (var i = 0; i < topFive.length; i++) {
-      topPlayers[i].textContent = `#${i+1} ` + topFive[i].username;
-      topScores[i].textContent = `${topFive[i].score} seconds`;
-    }
-    gameToResults();
-}
-
+  for (var i = 0; i < topFive.length; i++) {
+    topPlayers[i].textContent = `#${i + 1} ` + topFive[i].username;
+    topScores[i].textContent = `${topFive[i].score} seconds`;
+  }
+  gameToResults();
+};
 
 // Go to results page
 function gameToResults() {
@@ -100,6 +133,7 @@ function gameToResults() {
 };
 // Go to initial page
 function resultsToUser() {
+  count--;
   console.log(player_name, result, "result");
   // Remove previous left block
   let leftTemplate = document.getElementById("leftBlock");
