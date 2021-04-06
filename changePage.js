@@ -58,7 +58,7 @@ function userToGame() {
        setTimeout(function () {
           document.getElementById("sideBar").style.display = "none";
          
-          }, 500);
+          }, 50);
       
     //________________________________________________________________________________
   });
@@ -85,7 +85,7 @@ function userToGame() {
 // _________________In this global variables we set the times we need.
 function showStop() {
   startTime = Date.now();
-  document.querySelector("body").style.animationName="color";
+  //document.querySelector("body").style.animationName="color";
   document.querySelector("body").style.backdropFilter="hue-rotate(50deg) saturate(50%)";
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
@@ -101,7 +101,7 @@ function showStop() {
     //________________________________invert SlideAnimation, and bring it back
     document.querySelector("body").style.animationName="";
     document.querySelector("body").style.transition="0.5s";
-    document.querySelector("body").style.backdropFilter="hue-rotate(250deg) saturate(50%)";
+    //document.querySelector("body").style.backdropFilter="hue-rotate(250deg) saturate(50%)";
     document.getElementById("sideBar").style.animationDirection='reverse';
     document.getElementById("sideBar").style.display='flex';
     document.getElementById("mainSection").style.gridTemplateColumns="3fr 1fr";
