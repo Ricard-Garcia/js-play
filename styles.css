@@ -141,8 +141,8 @@ header {
 
 /* Title */
 #scoresTitle{
-    height: 50px;
-    margin-bottom: 45px;
+    height: fit-content;
+    margin-bottom: 50px;
     text-transform: uppercase;
     overflow: scroll;
 }
