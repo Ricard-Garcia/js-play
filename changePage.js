@@ -93,11 +93,11 @@ function showStop() {
   } else if (grid.checked && time2.checked) {
     showGameGrid(12, 200, "repeat(3, 1fr)");
   } else if (grid1.checked && time.checked) {
-    showGameGrid(24, 1000, "repeat(5, 1fr)");
+    showGameGrid(25, 1000, "repeat(5, 1fr)");
   } else if (grid1.checked && time1.checked) {
-    showGameGrid(24, 800, "repeat(5, 1fr)");
+    showGameGrid(25, 800, "repeat(5, 1fr)");
   } else if (grid1.checked && time2.checked) {
-    showGameGrid(24, 200, "repeat(5, 1fr)");
+    showGameGrid(25, 200, "repeat(5, 1fr)");
   } else if (grid2.checked && time.checked) {
     showGameGrid(60, 1000, "repeat(5, 1fr)");
   } else if (grid2.checked && time1.checked) {
