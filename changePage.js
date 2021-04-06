@@ -16,7 +16,13 @@ logButton.onclick = userToGame;
 // Go to game page
 function userToGame() {
   scoreArray = [];
-  var form = document.getElementById("userNameForm");
+  grid = document.getElementById("radioButton");
+  grid1 = document.getElementById("radioButton1");
+  grid2 = document.getElementById("radioButton2");
+  time = document.getElementById("radioButton3");
+  time1 = document.getElementById("radioButton4");
+  time2 = document.getElementById("radioButton5");
+  form = document.getElementById("userNameForm");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     player_name = document.getElementById('userInput').value;
@@ -75,6 +81,15 @@ function showStop() {
       const randomGridBox = myArray[randomIndex];
       randomGridBox.style.fontWeight = "900";
       randomGridBox.style.color = "white";
+
+      if (grid.checked){
+        randomGridBox.style.fontSize = "80px";
+      } else if (grid1.checked){
+        randomGridBox.style.fontSize = "50px";
+      } else if (grid2.checked){
+        randomGridBox.style.fontSize = "30px";
+      }
+
 
       randomGridBox.addEventListener("click", finish);
       setTimeout(() => {
@@ -147,6 +162,7 @@ function gameToResults() {
   secondsScore.innerHTML = `${result} seconds`;
   var againButton = document.getElementById("playAgain");
   againButton.onclick = resultsToUser;
+
 };
 
 // Go to initial page
