@@ -103,10 +103,10 @@
     document.querySelector('div#mainPageForm').style.animationName='inputName';
     //_________________________________________________________
 
-    var scoreArray = [];
+     var scoreArray = [];
 
     // sidebar top users and scores
-    for (var i = 0; i < localStorage.length; i++) {
+   for (var i = 0; i < localStorage.length; i++) {
         userName = localStorage.key(i);
         userScore = localStorage.getItem(userName);
         scoreArray.push({ username: userName, score: userScore });
@@ -123,4 +123,5 @@
 
 </script>
 <script src="changePage.js"></script>
+
 </html>
