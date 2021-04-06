@@ -197,6 +197,35 @@ button:hover{
     color: #274e45;
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Radio buttons */
+#gridOptions{
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Styling new radio buttons */
+.radio_control{
+    border: whitesmoke 2px solid;
+    border-radius: 10px;
+}
+
+/* Hide default radio/checkbox button */
+.radio_input input, .checkbox_input input{
+    opacity: 0%;
+    width: 0;
+    height: 0;
+}
+
+/* Center new radio/checkbox to text */
+.radio_input, .checkbox_input, .checkbox-mp_input{
+    display: flex;
+    align-items: center;
+}
+
+
+
 /* Footer */
 footer {
     height: 50px;
