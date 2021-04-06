@@ -194,7 +194,7 @@ button{
     animation-duration: 2s;
     font-size:20px;
     width:300px;
-   margin-left: 50%;
+   margin-left: 55%;
 }
 
 button:hover{
@@ -288,8 +288,8 @@ h3{
 @keyframes slideAnimation{
     0% { opacity: 100%;}
     90% { transform:scaleX(0.5) 
-        scaleY(0.5) 
-        matrix(1, 0, 1, 1,  100, 250) 
+        /*scaleY(0.5) */
+        /*matrix(1, 0, 1, 1,  100, 250) */
         translateX(800px);}
     100%{
         opacity: 0%;
@@ -298,16 +298,16 @@ h3{
 /*__________________ButonAnimation*/
 @keyframes startButon{
     0%   {
-        font-size:13px;
-        width: 80px;
+        font-size:16px;
+        width: 150px;
        opacity: 0%;
-        margin-left: 0%;
+        margin-left: 15%;
         }
    100% {
         opacity: 100%;
-        font-size:20px;
+       /* font-size:20px;*/
         width: 300px;
-        margin-left: 50%;
+        margin-left: 55%;
         }
 }
 /*____________________________________*/
