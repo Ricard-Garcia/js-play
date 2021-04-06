@@ -10,7 +10,7 @@ function showGameGrid() {
     contentContainer.setAttribute('id', 'cell' + i);
     contentContainer.innerHTML = "Stop me!";
   }
-  
+
   const myArray = [];
   for (let i = 0; i < 60; i++) {
     const items = document.getElementById("cell" + i);
@@ -29,9 +29,9 @@ function showGameGrid() {
       randomGridBox.style.fontWeight = "100";
       randomGridBox.style.color = "transparent";
       randomGridBox.removeEventListener("click", finish);
-    }, 500);
+    }, 1000);
 
-  }, 500);
+  }, 1000);
 
   myArray.forEach((element) => {
     element.style.height = "fit-content";
