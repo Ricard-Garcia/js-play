@@ -1,10 +1,10 @@
 var container = document.getElementById("gridContainer");
 var containerStyle = container.style;
-containerStyle.gridTemplateColumns = "repeat(5, 1fr)";
 
-function showGameGrid() {
+function showGameGrid(gridSize, timeSpeed, repeatGrid) {
+  containerStyle.gridTemplateColumns = repeatGrid;
   // Adding all items inside container
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < gridSize; i++) {
     var contentContainer = document.createElement("div");
     container.appendChild(contentContainer);
     contentContainer.setAttribute('id', 'cell' + i);
@@ -12,13 +12,13 @@ function showGameGrid() {
   }
 
   const myArray = [];
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < gridSize; i++) {
     const items = document.getElementById("cell" + i);
     myArray.push(items);
   }
 
   setInterval(() => {
-    const randomIndex = Math.floor(Math.random() * 60) + 1;
+    const randomIndex = Math.floor(Math.random() * gridSize) + 1;
     const randomGridBox = myArray[randomIndex];
     randomGridBox.style.fontWeight = "900";
     randomGridBox.style.color = "white";
@@ -29,9 +29,9 @@ function showGameGrid() {
       randomGridBox.style.fontWeight = "100";
       randomGridBox.style.color = "transparent";
       randomGridBox.removeEventListener("click", finish);
-    }, 1000);
+    }, timeSpeed);
 
-  }, 1000);
+  }, timeSpeed);
 
   myArray.forEach((element) => {
     element.style.height = "fit-content";
@@ -43,7 +43,20 @@ function showGameGrid() {
     element.style.color = "transparent";
     element.style.textTransform = "uppercase";
 
-
-
   });
-} showGameGrid();
+};showGameGrid(60,1000,"repeat(5, 1fr)");
+
+var grid = document.getElementById("radioButton");
+var time = document.getElementById("radioButton");
+var grid1 = document.getElementById("radioButton1");
+var time2 = document.getElementById("radioButton2");
+
+if (grid.checked && time.checked){
+  showGameGrid(12,1000,"repeat(3, 1fr)");
+} else if (grid1.checked && time2.checked) {
+  showGameGrid(60,1000,"repeat(5, 1fr)");
+} else if (grid.checked && time2.checked) {
+  showGameGrid(12,1000,"repeat(3, 1fr)");
+} else if (grid1.checked && time.checked) {
+  showGameGrid(60,1000,"repeat(5, 1fr)");
+}
