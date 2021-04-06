@@ -31,7 +31,7 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 /* Change Autocomplete styles in Chrome*/
@@ -110,10 +110,9 @@ header {
     justify-content: space-between;
     /* border: 2px red solid; */
     width: 100%;
-
 }
 
-#mainPageForm, #difficultyButtons{
+#mainPageForm, #difficultyWrapper{
     width: 48%;
 }
 
@@ -126,6 +125,12 @@ header {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* Difficulty buttons */
+#buttonsWrapper{
+    display: flex;
+    flex-direction: column;
 }
 
 /* Title */
@@ -199,10 +204,11 @@ button:hover{
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Radio buttons */
-#gridOptions{
+#gridOptions, #speedOptions{
     flex: 1 1 50%;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 20px;
 }
 
 /* Styling new radio buttons */
