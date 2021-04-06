@@ -15,13 +15,15 @@
 * {
     padding: 0;
     margin: 0;
-    border: 1px solid black;
     box-sizing: border-box;
     /* font-family:'Encode Sans Expanded', sans-serif; */
     font-family:'Work Sans', sans-serif;
     font-weight: 900;
     /* font-family: 'Titillium Web', sans-serif; */
     color: var(--accentColor);
+
+    /* Custom cursor */
+    cursor: url("./assets/images/dance.png") 0 0, auto;
 
     /* Disable text selection */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -118,6 +120,8 @@ header {
 
 #userInput{
     width: 100%;
+    outline: none;
+    border: none;
 }
 
 #gridContainer {
