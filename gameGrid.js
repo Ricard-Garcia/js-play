@@ -1,6 +1,6 @@
 var container = document.getElementById("gridContainer");
 var containerStyle = container.style;
-containerStyle.gridTemplateColumns = "repeat(5, 1fr)";
+containerStyle.gridTemplateColumns = "repeat(4, 1fr)";
 
 function showGameGrid() {
   // Adding all items inside container
@@ -10,7 +10,7 @@ function showGameGrid() {
     contentContainer.setAttribute('id', 'cell' + i);
     contentContainer.innerHTML = "Stop me!";
   }
-  
+
   const myArray = [];
   for (let i = 0; i < 60; i++) {
     const items = document.getElementById("cell" + i);
@@ -20,30 +20,20 @@ function showGameGrid() {
   setInterval(() => {
     const randomIndex = Math.floor(Math.random() * 60) + 1;
     const randomGridBox = myArray[randomIndex];
-    randomGridBox.style.fontWeight = "900";
-    randomGridBox.style.color = "white";
-
+    randomGridBox.style.background = "red";
     randomGridBox.addEventListener("click", finish);
 
     setTimeout(() => {
-      randomGridBox.style.fontWeight = "100";
-      randomGridBox.style.color = "transparent";
+      randomGridBox.style.background = "none";
       randomGridBox.removeEventListener("click", finish);
-    }, 500);
+    }, 1000);
 
-  }, 500);
+  }, 1000);
 
   myArray.forEach((element) => {
-    element.style.height = "fit-content";
-    element.style.padding = "fit-content";
+    element.style.height = "30px";
+    element.style.padding = "10px";
     element.style.textAlign = "center";
-    element.style.transition = ".4s";
-    element.style.fontSize = "45px",
-    element.style.fontWeight = "100";
-    element.style.color = "transparent";
-    element.style.textTransform = "uppercase";
-
-
 
   });
 } showGameGrid();
