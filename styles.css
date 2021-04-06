@@ -31,7 +31,7 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 /* Change Autocomplete styles in Chrome*/
@@ -220,7 +220,7 @@ button:hover{
     padding: 10px;
     margin-right: 20px;
     transition: .4s;
-    width: 80px;
+    width: 110px;
     text-align: center;
 }
 
