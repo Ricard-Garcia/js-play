@@ -9,6 +9,8 @@ logButton.onclick = userToGame;
 // Go to game page
 function userToGame() {
   // Checking user form
+   scoreArray = [];
+   
   var form = document.getElementById("userNameForm");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -63,7 +65,7 @@ function userToGame() {
   
   //_______stop
   function showGetReady() {
-    
+    document.querySelector("body").style.backdropFilter="hue-rotate(50deg)";
     document.getElementById("mainSection").style.gridTemplateColumns="1fr ";
     var randomNumber = Math.floor(Math.random() * 1000) + 1000;
     var getReadyText = document.getElementById("getReady");
@@ -83,7 +85,8 @@ function userToGame() {
 // _________________In this global variables we set the times we need.
 function showStop() {
   startTime = Date.now();
-  
+  document.querySelector("body").style.animationName="color";
+  document.querySelector("body").style.backdropFilter="hue-rotate(50deg) saturate(50%)";
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
   const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
@@ -96,6 +99,9 @@ function showStop() {
   // _________________calculating the seconds.
   function finish() {
     //________________________________invert SlideAnimation, and bring it back
+    document.querySelector("body").style.animationName="";
+    document.querySelector("body").style.transition="0.5s";
+    document.querySelector("body").style.backdropFilter="hue-rotate(250deg) saturate(50%)";
     document.getElementById("sideBar").style.animationDirection='reverse';
     document.getElementById("sideBar").style.display='flex';
     document.getElementById("mainSection").style.gridTemplateColumns="3fr 1fr";
@@ -146,12 +152,13 @@ function gameToResults() {
   againButton.onclick = resultsToUser;
   // Test print
   console.log("Switched to results");
+
 };
 // Go to initial page
 function resultsToUser() {
   
       
- ;
+  
   console.log(player_name, result, "result");
   // Remove previous left block
   let leftTemplate = document.getElementById("leftBlock");
@@ -165,8 +172,9 @@ function resultsToUser() {
      document.querySelector('div#mainPageForm').style.animationName='inputName';
            //Restart the slide animation
      document.getElementById("sideBar").style.animationName=''; 
+     document.querySelector("body").style.backdropFilter="hue-rotate(0deg)"
   //________________________________________________ 
-
+     
   //Reset user to game to default
   userToGame();
 };
