@@ -58,13 +58,21 @@
 
     <template id="userPage">
         <div class="left-wrapper">
-            <h2 class="title-page">Chose your user name</h2>
-            <div id="mainPageForm">
-                <h3 class="subtitle-page">User name</h3>
-                <form action="" id="userNameForm">
-                    <input minlength="1" id="userInput" type="text" autofocus required>
-                </form>
-                <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
+            <h2 class="title-page">Chose your <br> user name</h2>
+            <!-- Username & Difficulties buttons -->
+            <div id="usernameAndButtons">
+                <!-- User name -->
+                <div id="mainPageForm">
+                    <h3 class="subtitle-page">User name</h3>
+                    <form action="" id="userNameForm">
+                        <input minlength="1" id="userInput" type="text" autofocus required>
+                    </form>
+                    <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
+                </div>
+                <!-- Difficulty buttons -->
+                <div id="difficultyButtons">
+                    <h3 class="subtitle-page">Difficulty</h3>
+                </div>
             </div>
         </div>
     </template>
