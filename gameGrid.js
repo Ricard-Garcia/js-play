@@ -34,8 +34,8 @@ function showGameGrid() {
   }, 500);
 
   myArray.forEach((element) => {
-    element.style.height = "30px";
-    element.style.padding = "10px";
+    element.style.height = "fit-content";
+    element.style.padding = "fit-content";
     element.style.textAlign = "center";
     element.style.transition = ".4s";
     element.style.fontSize = "45px",
