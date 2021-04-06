@@ -15,7 +15,7 @@
 * {
     padding: 0;
     margin: 0;
-    border: 0;
+    border: 1px solid black;
     box-sizing: border-box;
     /* font-family:'Encode Sans Expanded', sans-serif; */
     font-family:'Work Sans', sans-serif;
@@ -294,4 +294,14 @@ h3{
 /* User result */
 #secondsScore{
     margin-bottom: 30px;
+}
+
+#gridContainer div {
+    height: fit-content; 
+    text-align: center; 
+    transition: all 0.4s ease 0s; 
+    font-size: 45px; 
+    font-weight: 100; 
+    color: transparent; 
+    text-transform: uppercase;
 }

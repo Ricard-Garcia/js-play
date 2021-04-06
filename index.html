@@ -54,8 +54,6 @@
         </div>
     </section>
 
-    <footer></footer>
-
     <template id="userPage">
         <div class="left-wrapper">
             <h2 class="title-page">Chose your <br> user name</h2>
@@ -153,6 +151,7 @@
         </div>
     </template>
 
+    <footer></footer>
 </body>
 <!-- Javascript -->
 
@@ -162,7 +161,6 @@
     document.getElementById('leftBlock').appendChild(userPageTemplateContent);
 
     var scoreArray = [];
-
     // sidebar top users and scores
     for (var i = 0; i < localStorage.length; i++) {
         userName = localStorage.key(i);
