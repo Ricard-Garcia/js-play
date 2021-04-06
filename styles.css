@@ -58,6 +58,7 @@ body {
     padding: 40px;
     /* background-color: var(--mainColor); */
     background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b);
+    transition:2s;
     background-repeat: no-repeat;
 }  
 

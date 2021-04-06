@@ -29,8 +29,8 @@ function userToGame() {
     var startButton = document.getElementById("startGame");
     startButton.onclick = showGetReady;
       //__________________________animation,hidde slide and fullscreen game
-
       
+      document.querySelector("body").style.backdropFilter="hue-rotate(250deg) saturate(150%)";
       document.getElementById("sideBar").style.animationName='slideAnimation'; //This is another way: document.getElementById("sideBar").style.transform = "scaleX(0.5) scaleY(0.5) matrix(1, 0, 1, 1,  100, 250) translateX(500px)";
       document.getElementById("sideBar").style.animationDuration='0.5s';
       document.getElementById("sideBar").style.animationDirection='normal';
