@@ -56,13 +56,77 @@
 
     <template id="userPage">
         <div class="left-wrapper">
-            <h2 class="title-page">Chose your user name</h2>
-            <div id="mainPageForm">
-                <h3 class="subtitle-page">User name</h3>
-                <form action="" id="userNameForm">
-                    <input id="userInput" type="text" autofocus required>
-                </form>
-                <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
+            <h2 class="title-page">Chose your <br> user name</h2>
+            <!-- Username & Difficulties buttons -->
+            <div id="usernameAndButtons">
+                <!-- User name -->
+                <div id="mainPageForm">
+                    <h3 class="subtitle-page">User name</h3>
+                    <form action="" id="userNameForm">
+                        <input minlength="1" id="userInput" type="text" autofocus required>
+                    </form>
+                    <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
+                </div>
+                <!-- Difficulty buttons -->
+                <div id="difficultyWrapper">
+                    <h3 class="subtitle-page">Grid density & Speed</h3>
+                    <div id="buttonsWrapper">
+                        <!-- Grid options -->
+                        <div id="gridOptions">
+                            <!-- Radio buttons -->
+                            <!-- Small -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input class="input-type-grid" type="radio" name="grid-radio">
+                                    <span class="radio_control">Small</span>
+                                </span>
+                            </label>
+                            <!-- Linebreak -->
+                            <br>
+                            <!-- Medium  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input class="input-type-grid" type="radio" name="grid-radio" checked>
+                                    <span class="radio_control">Medium</span>
+                                </span>
+                            </label>
+                            <!-- Large  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input class="input-type-grid" type="radio" name="grid-radio">
+                                    <span class="radio_control">Large</span>
+                                </span>
+                            </label>
+                        </div>
+                        <!-- Grid options -->
+                        <div id="speedOptions">
+                            <!-- Radio buttons -->
+                            <!-- Small -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input class="input-type-speed" type="radio" name="speed-radio" checked>
+                                    <span class="radio_control">Slow</span>
+                                </span>
+                            </label>
+                            <!-- Linebreak -->
+                            <br>
+                            <!-- Medium  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input class="input-type-speed" type="radio" name="speed-radio">
+                                    <span class="radio_control">Normal</span>
+                                </span>
+                            </label>
+                            <!-- Large  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input class="input-type-speed" type="radio" name="speed-radio">
+                                    <span class="radio_control">Fast</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </template>

@@ -100,8 +100,24 @@ header {
     flex-direction: column;
     align-items:flex-start;
     justify-content: center;
-    width: 500px;
+    width: 100%;
     height: 300px;
+}
+
+#usernameAndButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 2px red solid; */
+    width: 100%;
+}
+
+#mainPageForm, #difficultyWrapper{
+    width: 48%;
+}
+
+#userInput{
+    width: 100%;
 }
 
 #gridContainer {
@@ -111,9 +127,15 @@ header {
     border: none;
 }
 
+/* Difficulty buttons */
+#buttonsWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
 /* Title */
 .title-page{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     text-transform: uppercase;
 }
 
@@ -179,6 +201,58 @@ button:hover{
     background-color: whitesmoke;
     color: #274e45;
 }
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Radio buttons */
+#gridOptions, #speedOptions{
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Styling new radio buttons */
+.radio_control{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-right: 20px;
+    box-sizing: content-box;
+    padding: 10px;
+    margin-right: 20px;
+    transition: .4s;
+    width: 110px;
+    text-align: center;
+}
+
+.radio_control:hover{
+    background-color: rgb(255, 255, 255);
+    color: #274e45;
+}
+
+/* Hide default radio/checkbox button */
+.radio_input input, .checkbox_input input{
+    opacity: 0%;
+    width: 0;
+    height: 0;
+}
+
+/* Checked radio */
+.radio_input input:checked + .radio_control{
+    background-color: white;
+    /* border: transparent 2px solid; */
+    color: #274e45;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-sizing: content-box;
+    padding: 10px;
+}
+
+/* Center new radio/checkbox to text */
+.radio_input, .checkbox_input, .checkbox-mp_input{
+    display: flex;
+    align-items: center;
+}
+
 
 /* Footer */
 footer {
