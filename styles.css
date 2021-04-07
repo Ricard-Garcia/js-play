@@ -15,7 +15,7 @@
 * {
     padding: 0;
     margin: 0;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
     box-sizing: border-box;
     /* font-family:'Encode Sans Expanded', sans-serif; */
     font-family:'Work Sans', sans-serif;
@@ -57,8 +57,14 @@ body {
     height: 100vh;
     padding: 40px;
     /* background-color: var(--mainColor); */
-    background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b)
-}
+    background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b);
+    transition:2s;
+    background-repeat: no-repeat;
+    animation-iteration-count:infinite;
+    animation-duration: 10s;
+  
+    
+}  
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Header */
@@ -81,6 +87,9 @@ header {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: "leftSection sideBar";
+    transition: 3s;
+    /*animation:none;*/
+    
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -93,6 +102,9 @@ header {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
+    transition-timing-function: cubic-bezier(.30,.35,.48,1.68);
+    transition: 1s;
+
 }
 
 .left-wrapper{
@@ -137,6 +149,12 @@ header {
 .title-page{
     margin-bottom: 50px;
     text-transform: uppercase;
+    margin-bottom: 30px;
+    /*animation-name: start;*/
+    animation-duration: 2s;
+}
+div#mainPageForm{
+    animation-duration: 2s;
 }
 
 /* Initial text area (user) */
@@ -159,6 +177,11 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    animation-duration: 0.5s;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.30,.35,.48,1.68);
+
+    
 }
 
 /* Title */
@@ -179,7 +202,10 @@ header {
 
 /* Top user wrapper */
 .top-user{
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    width: 100%;
+    transition:1s;
+    
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -194,6 +220,12 @@ button{
     transition: .4s;
     outline: none;
     width: 80px;
+}
+#startGame{
+    animation-duration: 2s;
+    font-size:20px;
+    width:300px;
+   margin-left: 55%;
 }
 
 button:hover{
@@ -259,6 +291,10 @@ footer {
     height: 50px;
 }
 
+#gamePage{
+    
+    transition: 1s;
+}
 
 /* Font styling */
 h2, input{
@@ -274,11 +310,14 @@ h3{
     font-size: 30px;
 }
 
+
 .subtitle-page{
     margin-bottom: 20px;
     font-family: 'Work Sans';
     font-variation-settings: 'wght' 100;
+    
     transition: .5s;
+    
 }
 
 .subtitle-page:hover{
@@ -305,3 +344,68 @@ h3{
     color: transparent; 
     text-transform: uppercase;
 }
+/*_________________________________Animations Section*/
+/*__________________Welcome animation*/
+@keyframes start{
+    0% {margin-bottom: 500px;
+        opacity: 0%;}
+    5% {transform:rotateX(90deg);}
+    20%{opacity: 2%;}
+        
+    100%{margin-bottom: 30px;
+        opacity: 100%;}
+}
+@keyframes inputName{
+    0% {
+        opacity: 0%;}
+
+    20%{opacity: 0%;
+        transform:rotateY(90deg);}
+    100%{
+        opacity: 100%;}
+}
+@keyframes slideAnimationY{
+    0% {
+        opacity: 0%;}
+
+    20%{opacity: 0%;
+        transform:rotateY(90deg);}
+    100%{
+        opacity: 100%;}
+
+}
+/*____________________________________*/
+/*___________________________after press start button*/
+/*__________________SlideAnimation*/
+@keyframes slideAnimation{
+    0% { opacity: 100%;}
+    90% { transform:scaleX(0.5) 
+        /*scaleY(0.5) */
+        /*matrix(1, 0, 1, 1,  100, 250) */
+        translateX(800px);}
+    100%{
+        opacity: 0%;
+        }
+}
+/*__________________ButonAnimation*/
+@keyframes startButon{
+    0%   {
+        font-size:16px;
+        width: 150px;
+       opacity: 0%;
+        margin-left: 15%;
+        }
+   100% {
+        opacity: 100%;
+       /* font-size:20px;*/
+        width: 300px;
+        margin-left: 55%;
+        }
+}
+
+@keyframes color{
+    0%{ backdrop-filter: hue-rotate(100deg) saturate(100%);}
+    100%{ backdrop-filter: hue-rotate(10050deg) saturate(300%);}
+}
+/*____________________________________*/
+/*_______________________________________________________*/
