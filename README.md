@@ -10,6 +10,8 @@ Clone the repository on your local machine:
 $ git clone https://github.com/Ricard-Garcia/js-play.git
 ```
 
+The *_Extra-project* folder contains the final project files with all functionalities.
+
 ## Best practices
 
 In order to unify all declarations follow this guideline
