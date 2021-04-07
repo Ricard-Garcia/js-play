@@ -31,27 +31,71 @@ function userToGame() {
     leftTemplate.innerHTML = "";
     // Add next left block
     let gamePageTemplate = document.getElementById("gamePage");
+
     const gamePageTemplateContent = document.importNode(gamePageTemplate.content, true);
     leftTemplate.appendChild(gamePageTemplateContent);
+
+
 
     document.getElementById("getReady").style.display = "none";
     var startButton = document.getElementById("startGame");
     startButton.onclick = showGetReady;
-  });
+      //__________________________animation,hidde slide and fullscreen game
+      
+      document.querySelector("body").style.backdropFilter="hue-rotate(250deg) saturate(150%)";
+      document.getElementById("sideBar").style.animationName='slideAnimation'; //This is another way: document.getElementById("sideBar").style.transform = "scaleX(0.5) scaleY(0.5) matrix(1, 0, 1, 1,  100, 250) translateX(500px)";
+      document.getElementById("sideBar").style.animationDuration='0.5s';
+      document.getElementById("sideBar").style.animationDirection='normal';
+      //__________________________startButton apears
+      startButton.style.animationName='startButon';
+      
+            /* ____________'Proces'befor using animations @kyframes
 
+            leftTemplate.style.transform = " translateX(40%) ";
+            document.querySelector('body').style.background="linear-gradient(75deg, #142949, #274e45, #74752a, #9f1818)";
+              setTimeout(function () {
+                  
+                  startButton.style.fontSize="20px";
+                  startButton.style.width='300px';
+                  startButton.style.transform='translateX(400px)';
+                  startButton.style.transition='1s;'
+
+                }, 200);
+            document.getElementById("leftBlock").style.backgroundColor="blue";
+            document.getElementById("sideBar").style.display='none';
+            _________________________________*/
+      
+       setTimeout(function () {
+          document.getElementById("sideBar").style.display = "none";
+         
+          }, 50);
+      
+    //________________________________________________________________________________
+  });
+  
+  //_______stop
   function showGetReady() {
-    var randomNumber = Math.floor(Math.random() * 1000) + 2000;
+    document.querySelector("body").style.backdropFilter="hue-rotate(50deg)";
+    document.getElementById("mainSection").style.gridTemplateColumns="1fr ";
+    var randomNumber = Math.floor(Math.random() * 1000) + 1000;
     var getReadyText = document.getElementById("getReady");
     getReadyText.style.display = "";
+    
     document.getElementById("startGame").style.display = "none";
+    
+    
     setTimeout(function () {
       getReadyText.style.display = "none";
+      
+       
       showStop();
     }, randomNumber);
   };
 };
 
 function showStop() {
+  document.querySelector("body").style.animationName="color";
+  document.querySelector("body").style.backdropFilter="hue-rotate(50deg) saturate(50%)";
   startTime = Date.now();
   let stopPageTemplate = document.getElementById("stopPage");
   const stopPageTemplateContent = document.importNode(stopPageTemplate.content, true);
@@ -124,6 +168,14 @@ function showStop() {
 };
 
 function finish() {
+  //________________________________invert SlideAnimation, and bring it back
+  document.querySelector("body").style.animationName="";
+  document.querySelector("body").style.transition="0.5s";
+  //document.querySelector("body").style.backdropFilter="hue-rotate(250deg) saturate(50%)";
+  document.getElementById("sideBar").style.animationDirection='reverse';
+  document.getElementById("sideBar").style.display='flex';
+  document.getElementById("mainSection").style.gridTemplateColumns="3fr 1fr";
+  //____________________________________________________________
   stopTime = Date.now();
   myArray = [];
   result = (stopTime - startTime) / 1000;
@@ -155,7 +207,7 @@ function gameToResults() {
   leftTemplate.innerHTML = "";
 
   let resultPageTemplate = document.getElementById("resultPage");
-  const resultPageTemplateContent = document.importNode(resultPageTemplate.content, true);
+  const resultPageTemplateContent = document.importNode(resultPageTemplate.content,true);
   leftTemplate.appendChild(resultPageTemplateContent);
 
   var secondsScore = document.getElementById("secondsScore");
@@ -167,13 +219,25 @@ function gameToResults() {
 
 // Go to initial page
 function resultsToUser() {
+  
+      
+  
   console.log(player_name, result, "result");
   let leftTemplate = document.getElementById("leftBlock");
   leftTemplate.innerHTML = "";
 
   let userPageTemplate = document.getElementById("userPage");
-  const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
+  const userPageTemplateContent = document.importNode(userPageTemplate.content,true);
   leftTemplate.appendChild(userPageTemplateContent);
 
+  //__________________________Repeat WelcomeAnimations
+     document.querySelector('.title-page').style.animationName='start';
+     document.querySelector('div#mainPageForm').style.animationName='inputName';
+           //Restart the slide animation
+     document.getElementById("sideBar").style.animationName=''; 
+     document.querySelector("body").style.backdropFilter="hue-rotate(0deg)"
+  //________________________________________________ 
+     
+  //Reset user to game to default
   userToGame();
 };

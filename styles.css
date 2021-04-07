@@ -1,39 +1,41 @@
 /* General variables */
-:root{
-    --mainColor: #D72150; /* Red */
-    --accentColor: whitesmoke; /* Whitish */
+:root {
+  --mainColor: #d72150; /* Red */
+  --accentColor: whitesmoke; /* Whitish */
 }
 
 /* Typeface declaration */
 @font-face {
-	font-family: 'Work Sans';
-    src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf') format("truetype-variations");
-    font-weight: 100 900;
+  font-family: "Work Sans";
+  src: url("/assets/fonts/WorkSans-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
 }
 
 /* General styling */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /* font-family:'Encode Sans Expanded', sans-serif; */
-    font-family:'Work Sans', sans-serif;
-    font-weight: 900;
-    /* font-family: 'Titillium Web', sans-serif; */
-    color: var(--accentColor);
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid black;*/
+  box-sizing: border-box;
+  /* font-family:'Encode Sans Expanded', sans-serif; */
+  font-family: "Work Sans", sans-serif;
+  font-weight: 900;
+  /* font-family: 'Titillium Web', sans-serif; */
+  color: var(--accentColor);
 
-    /* Custom cursor */
-    cursor: url("./assets/images/dance.png") 0 0, auto;
+  /* Custom cursor */
+  cursor: url("./assets/images/dance.png") 0 0, auto;
 
-    /* Disable text selection */
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
+  /* Disable text selection */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                           supported by Chrome, Edge, Opera and Firefox */
-    /* border: 1px solid black; */
+  /* border: 1px solid black; */
 }
 
 /* Change Autocomplete styles in Chrome*/
@@ -46,266 +48,386 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color: whitesmoke;
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-    transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: whitesmoke;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Body */
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 40px;
-    /* background-color: var(--mainColor); */
-    background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b)
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 40px;
+  /* background-color: var(--mainColor); */
+  background-image: linear-gradient(25deg, #142949, #274e45, #2a753c, #189f2b);
+  transition: 2s;
+  background-repeat: no-repeat;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Header */
 header {
-    height: 100px;
-    display: flex;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    font-size: 15px;
-    /* align-items: center; */
-    color: whitesmoke;
-    font-weight: 600;
-    padding-left: 30px;
+  height: 100px;
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 15px;
+  /* align-items: center; */
+  color: whitesmoke;
+  font-weight: 600;
+  padding-left: 30px;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Central */
 #mainSection {
-    flex: 1 2 auto;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: "leftSection sideBar";
+  flex: 1 2 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "leftSection sideBar";
+  transition: 3s;
+  /*animation:none;*/
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Left block */
 #leftBlock {
-    /* background-color: rgb(255, 83, 83); */
-    grid-area: leftSection;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
+  /* background-color: rgb(255, 83, 83); */
+  grid-area: leftSection;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  transition-timing-function: cubic-bezier(0.3, 0.35, 0.48, 1.68);
+  transition: 1s;
 }
 
-.left-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    justify-content: center;
-    width: 100%;
-    height: 300px;
+.left-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
 }
 
-#usernameAndButtons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* border: 2px red solid; */
-    width: 100%;
+#usernameAndButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 2px red solid; */
+  width: 100%;
 }
 
-#mainPageForm, #difficultyWrapper{
-    width: 48%;
+#mainPageForm,
+#difficultyWrapper {
+  width: 48%;
 }
 
-#userInput{
-    width: 100%;
-    outline: none;
-    border: none;
+#userInput {
+  width: 100%;
+  outline: none;
+  border: none;
 }
 
 #gridContainer {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    border: none;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Difficulty buttons */
-#buttonsWrapper{
-    display: flex;
-    flex-direction: column;
+#buttonsWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Title */
-.title-page{
-    margin-bottom: 50px;
-    text-transform: uppercase;
+.title-page {
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  /*animation-name: start;*/
+  animation-duration: 2s;
+}
+div#mainPageForm {
+  animation-duration: 2s;
 }
 
 /* Initial text area (user) */
-#userInput{
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    background-color: transparent;
-    outline: none;
-    color:whitesmoke;
-    margin-bottom: 30px;
-    /* padding: 25px; */
+#userInput {
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: transparent;
+  outline: none;
+  color: whitesmoke;
+  margin-bottom: 30px;
+  /* padding: 25px; */
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Sidebar */
 #sideBar {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    grid-area: sideBar;
-    padding: 50px 50px 50px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  grid-area: sideBar;
+  padding: 50px 50px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation-duration: 0.5s;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.3, 0.35, 0.48, 1.68);
 }
 
 /* Title */
-#scoresTitle{
-    height: fit-content;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    overflow: scroll;
+#scoresTitle {
+  height: fit-content;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  overflow: scroll;
 }
 
 /* Top users */
-#topUserWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 1 1 auto;
+#topUserWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 auto;
 }
 
 /* Top user wrapper */
-.top-user{
-    margin-bottom: 25px;
+.top-user {
+  margin-bottom: 30px;
+  width: 100%;
+  transition: 1s;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Buttons */
-button{
-    border: whitesmoke 2px solid;
-    border-radius: 10px;
-    background-color: transparent;
-    box-sizing: content-box;
-    padding: 10px 10px 12px 10px;
-    color: whitesmoke;
-    transition: .4s;
-    outline: none;
-    width: 80px;
+button {
+  border: whitesmoke 2px solid;
+  border-radius: 10px;
+  background-color: transparent;
+  box-sizing: content-box;
+  padding: 10px 10px 12px 10px;
+  color: whitesmoke;
+  transition: 0.4s;
+  outline: none;
+  width: 80px;
+}
+#startGame {
+  animation-duration: 2s;
+  font-size: 20px;
+  width: 300px;
+  margin-left: 55%;
 }
 
-button:hover{
-    border: transparent 2px solid;
-    background-color: whitesmoke;
-    color: #274e45;
+button:hover {
+  border: transparent 2px solid;
+  background-color: whitesmoke;
+  color: #274e45;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>> */
 /* Radio buttons */
-#gridOptions, #speedOptions{
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
+#gridOptions,
+#speedOptions {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
 }
 
 /* Styling new radio buttons */
-.radio_control{
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    margin-right: 20px;
-    box-sizing: content-box;
-    padding: 10px;
-    margin-right: 20px;
-    transition: .4s;
-    width: 110px;
-    text-align: center;
+.radio_control {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin-right: 20px;
+  box-sizing: content-box;
+  padding: 10px;
+  margin-right: 20px;
+  transition: 0.4s;
+  width: 110px;
+  text-align: center;
 }
 
-.radio_control:hover{
-    background-color: rgb(255, 255, 255);
-    color: #274e45;
+.radio_control:hover {
+  background-color: rgb(255, 255, 255);
+  color: #274e45;
 }
 
 /* Hide default radio/checkbox button */
-.radio_input input, .checkbox_input input{
-    opacity: 0%;
-    width: 0;
-    height: 0;
+.radio_input input,
+.checkbox_input input {
+  opacity: 0%;
+  width: 0;
+  height: 0;
 }
 
 /* Checked radio */
-.radio_input input:checked + .radio_control{
-    background-color: white;
-    /* border: transparent 2px solid; */
-    color: #274e45;
-    border-radius: 10px;
-    margin-right: 20px;
-    box-sizing: content-box;
-    padding: 10px;
+.radio_input input:checked + .radio_control {
+  background-color: white;
+  /* border: transparent 2px solid; */
+  color: #274e45;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-sizing: content-box;
+  padding: 10px;
 }
 
 /* Center new radio/checkbox to text */
-.radio_input, .checkbox_input, .checkbox-mp_input{
-    display: flex;
-    align-items: center;
+.radio_input,
+.checkbox_input,
+.checkbox-mp_input {
+  display: flex;
+  align-items: center;
 }
-
 
 /* Footer */
 footer {
-    height: 50px;
+  height: 50px;
 }
 
+#gamePage {
+  transition: 1s;
+}
 
 /* Font styling */
-h2, input{
-    font-size: 50px;
-    line-height: 50px;
+h2,
+input {
+  font-size: 50px;
+  line-height: 50px;
 }
 
-input{
-    font-weight: 100;
+input {
+  font-weight: 100;
 }
 
-h3{
-    font-size: 30px;
+h3 {
+  font-size: 30px;
 }
 
-.subtitle-page{
-    margin-bottom: 20px;
-    font-family: 'Work Sans';
-    font-variation-settings: 'wght' 100;
-    transition: .5s;
+.subtitle-page {
+  margin-bottom: 20px;
+  font-family: "Work Sans";
+  font-variation-settings: "wght" 100;
+
+  transition: 0.5s;
 }
 
-.subtitle-page:hover{
-    margin-bottom: 20px;
-    font-family: 'Work Sans';
-    font-variation-settings: 'wght' 900;
+.subtitle-page:hover {
+  margin-bottom: 20px;
+  font-family: "Work Sans";
+  font-variation-settings: "wght" 900;
 }
 
-.topScore{
-    font-weight: 100;
+.topScore {
+  font-weight: 100;
 }
 
 /* User result */
-#secondsScore{
-    margin-bottom: 30px;
+#secondsScore {
+  margin-bottom: 30px;
 }
 
 #gridContainer div {
-    height: fit-content; 
-    text-align: center; 
-    transition: all 0.4s ease 0s; 
-    font-size: 45px; 
-    font-weight: 100; 
-    color: transparent; 
-    text-transform: uppercase;
+  height: fit-content;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+  font-size: 45px;
+  font-weight: 100;
+  color: transparent;
+  text-transform: uppercase;
 }
+/*_________________________________Animations Section*/
+/*__________________Welcome animation*/
+@keyframes start {
+  0% {
+    margin-bottom: 500px;
+    opacity: 0%;
+  }
+  5% {
+    transform: rotateX(90deg);
+  }
+  20% {
+    opacity: 2%;
+  }
+
+  100% {
+    margin-bottom: 30px;
+    opacity: 100%;
+  }
+}
+@keyframes inputName {
+  0% {
+    opacity: 0%;
+  }
+
+  20% {
+    opacity: 0%;
+    transform: rotateY(90deg);
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes slideAnimationY {
+  0% {
+    opacity: 0%;
+  }
+
+  20% {
+    opacity: 0%;
+    transform: rotateY(90deg);
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+/*____________________________________*/
+/*___________________________after press start button*/
+/*__________________SlideAnimation*/
+@keyframes slideAnimation {
+  0% {
+    opacity: 100%;
+  }
+  90% {
+    transform: scaleX(0.5) /*scaleY(0.5) */ /*matrix(1, 0, 1, 1,  100, 250) */
+      translateX(800px);
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+/*__________________ButonAnimation*/
+@keyframes startButon {
+  0% {
+    font-size: 16px;
+    width: 150px;
+    opacity: 0%;
+    margin-left: 15%;
+  }
+  100% {
+    opacity: 100%;
+    /* font-size:20px;*/
+    width: 300px;
+    margin-left: 55%;
+  }
+}
+
+@keyframes color {
+  0% {
+    backdrop-filter: hue-rotate(100deg) saturate(100%);
+  }
+  100% {
+    backdrop-filter: hue-rotate(10050deg) saturate(300%);
+  }
+}
+/*____________________________________*/
+/*_______________________________________________________*/
