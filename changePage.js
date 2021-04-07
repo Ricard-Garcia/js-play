@@ -85,7 +85,7 @@ function userToGame() {
 // _________________In this global variables we set the times we need.
 function showStop() {
   startTime = Date.now();
-  //document.querySelector("body").style.animationName="color";
+  document.querySelector("body").style.animationName="color";
   document.querySelector("body").style.backdropFilter="hue-rotate(50deg) saturate(50%)";
   // Add next left block
   let stopPageTemplate = document.getElementById("stopPage");
