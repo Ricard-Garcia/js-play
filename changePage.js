@@ -13,6 +13,7 @@ var time2 = document.getElementById("radioButton5");
 var logButton = document.getElementById("initialButton");
 logButton.onclick = userToGame;
 
+
 // Go to game page
 function userToGame() {
   restartBoard();
