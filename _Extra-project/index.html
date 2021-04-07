@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tab title -->
+    <title>Test your reflexes</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Typefaces -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Encode Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;500;900&display=swap" rel="stylesheet">
+    <!-- Titillium -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;900&display=swap" rel="stylesheet">
+</head>
+<!-- Body element -->
+
+<body>
+    <header>
+        <div id="headerTitle">Test your reflexes | JS Play</div>
+    </header>
+    <section id="mainSection">
+        <!-- Templates will be placed here -->
+        <div id="leftBlock">
+
+        </div>
+        <div id="sideBar">
+            <h2 id="scoresTitle">User Scores</h2>
+            <div id="topUserWrapper">
+                <div class="top-user" id="topOneUser">
+                    <h3 id="topOneName" class="topName"></h3>
+                    <h3 id="topOneScore" class="topScore"></h3>
+                </div>
+                <div class="top-user" id="topTwoUser">
+                    <h3 id="topTwoName" class="topName"></h3>
+                    <h3 id="topTwoScore" class="topScore"></h3>
+                </div>
+                <div class="top-user" id="topThreeUser">
+                    <h3 id="topThreeName" class="topName"></h3>
+                    <h3 id="topThreeScore" class="topScore"></h3>
+                </div>
+                <div class="top-user" id="topFourUser">
+                    <h3 id="topFourName" class="topName"></h3>
+                    <h3 id="topFourScore" class="topScore"></h3>
+                </div>
+                <div class="top-user" id="topFiveUser">
+                    <h3 id="topFiveName" class="topName"></h3>
+                    <h3 id="topFiveScore" class="topScore"></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <template id="userPage">
+        <div class="left-wrapper">
+            <h2 class="title-page">Choose your <br> user name</h2>
+            <!-- Username & Difficulties buttons -->
+            <div id="usernameAndButtons">
+                <!-- User name -->
+                <div id="mainPageForm">
+                    <h3 class="subtitle-page">User name</h3>
+                    <form action="" id="userNameForm">
+                        <input minlength="1" id="userInput" type="text" autofocus required>
+                    </form>
+                    <button id="initialButton" type="submit" name="userButton" form="userNameForm">Start</button>
+                </div>
+                <!-- Difficulty buttons -->
+                <div id="difficultyWrapper">
+                    <h3 class="subtitle-page">Grid density & Speed</h3>
+                    <div id="buttonsWrapper">
+                        <!-- Grid options -->
+                        <div id="gridOptions">
+                            <!-- Radio buttons -->
+                            <!-- Small -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input id="radioButton" class="input-type-grid" type="radio" name="grid-radio" checked>
+                                    <span class="radio_control">Small</span>
+                                </span>
+                            </label>
+                            <!-- Linebreak -->
+                            <br>
+                            <!-- Medium  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input id="radioButton1" class="input-type-grid" type="radio" name="grid-radio">
+                                    <span class="radio_control">Medium</span>
+                                </span>
+                            </label>
+                            <!-- Large  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input id="radioButton2" class="input-type-grid" type="radio" name="grid-radio">
+                                    <span class="radio_control">Large</span>
+                                </span>
+                            </label>
+                        </div>
+                        <!-- Grid options -->
+                        <div id="speedOptions">
+                            <!-- Radio buttons -->
+                            <!-- Small -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input id="radioButton3" class="input-type-speed" type="radio" name="speed-radio" checked>
+                                    <span class="radio_control">Slow</span>
+                                </span>
+                            </label>
+                            <!-- Linebreak -->
+                            <br>
+                            <!-- Medium  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input id="radioButton4" class="input-type-speed" type="radio" name="speed-radio">
+                                    <span class="radio_control">Normal</span>
+                                </span>
+                            </label>
+                            <!-- Large  -->
+                            <label class="radio">
+                                <span class="radio_input">
+                                    <input id="radioButton5" class="input-type-speed" type="radio" name="speed-radio">
+                                    <span class="radio_control">Fast</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="gamePage">
+        <button id="startGame">Start Game</button>
+        <h3 id='getReady'>Get ready...</h3>
+    </template>
+
+    <template id="stopPage">
+        <div id='gridContainer'>
+
+        </div>
+    </template>
+
+    <template id="resultPage">
+        <div class="left-wrapper">
+            <h2 class="title-page">Your score</h2>
+            <h3 class="subtitle-page">Your reaction time was:</h3>
+            <h3 id="secondsScore"></h3>
+            <button id="playAgain">Play again</button>
+        </div>
+    </template>
+
+    <footer></footer>
+</body>
+<!-- Javascript -->
+
+<script>
+    let userPageTemplate = document.getElementById('userPage');
+    const userPageTemplateContent = document.importNode(userPageTemplate.content, true);
+    document.getElementById('leftBlock').appendChild(userPageTemplateContent);
+
+    document.getElementById("sideBar").style.animationName='slideAnimationY';
+    document.getElementById("sideBar").style.animationDuration='2s';
+    document.querySelector('.title-page').style.animationName='start';
+    document.querySelector('div#mainPageForm').style.animationName='inputName';
+
+    var scoreArray = [];
+
+    // sidebar top users and scores
+    for (var i = 0; i < localStorage.length; i++) {
+        userName = localStorage.key(i);
+        userScore = localStorage.getItem(userName);
+        scoreArray.push({ username: userName, score: userScore });
+    }
+    var topFive = scoreArray.sort((a, b) => a.score - b.score).slice(0, 5);
+
+    var topPlayers = document.querySelectorAll(".topName");
+    var topScores = document.querySelectorAll(".topScore");
+
+    for (var i = 0; i < topFive.length; i++) {
+        topPlayers[i].textContent = `#${i+1} ` + topFive[i].username;
+        topScores[i].textContent = `${topFive[i].score} seconds`;
+    }
+
+</script>
+<script src="changePage.js"></script>
+
+</html>
